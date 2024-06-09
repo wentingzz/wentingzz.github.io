@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Wenting's Project - Ant Colony Optimization</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+			$(function(){
+				$("#contact").load("../contact.html");
+			});
+		</script>
+	</head>
+	<body class="is-preload">
+		<div class="back-link">
+			<a href="javascript:history.go(-1)" style="border-bottom: none; ">
+				<span class="icon solid fa-arrow-left" style="font-size: 24px"></span>
+			</a>
+		</div>
+		<!-- Main -->
+			<div id="project">
+				<section id="one">
+					<header class="major">
+						<h2>Ant Colony Optimization to TSP</h2>
+					</header>
+					<p>
+						The Ant Colony Optimization (ACO) algorithm draws inspiration from the collective intelligence of real ants, particularly their use of pheromones for social interactions. ACO is capable of producing near-optimal solutions to the Traveling Salesman Problem (TSP) within a constrained timeframe and finds applications in various combinatorial optimization problems. This study concentrates on assessing the performance of ACO in TSP, focusing on implementation decisions and the impact of different parameters. The research employs the simplest form of TSP, which calculates the Euclidean distance as the cost between cities, as the specific type of TSP is not the primary focus.
+					</p>
+					<p>
+						This project evaluates the effectiveness of Ant Colony Optimization (ACO) in solving the Travelling Salesman Problem (TSP). The implementation is customized based on research findings or extensive testing. The final implementation adopts the Max-Min Ant System due to its ability to provide stable solutions with good performance for TSP. The project aims to investigate the impact of algorithmic parameters on its performance.
+						<a href="#demo" style="border-bottom: none; "> See Pseudocode
+							<span class="icon solid fa-arrow-right"></span>
+						</a>
+					</p>
+				</section>
+				<section id="literature">
+					<header class="major">
+						<h2>Literature Summary</h2>
+					</header>
+					<p>
+						Ant System, introduced by Marco Dorigo in 1992, mimics ants' behavior to find paths between nest and food sources. This concept led to the development of other algorithms in the ant colony optimization (ACO) family, such as the Max-Min Ant System by Hoos and Stützle in 1996 and Ant Colony Optimization by Gambardella and Dorigo in 1997. ACO is commonly used in planning and scheduling to minimize costs, including job scheduling, transportation choice, and vehicle routing. It also finds applications in fields like image processing and DNA sequencing.
+					</p>
+					<p>
+						ACO comprises three main parts: edge selection, pheromone update, and termination criteria. In each iteration, ants construct solutions, calculate their lengths, update pheromones based on solution performance, and terminate based on specific criteria. The formula shows as the follow:
+					</p>
+					<div>
+						\[
+						\tau_{i,j}(t+1) = (1 - \rho) \cdot \tau_{i,j}(t) + \sum_{k} \Delta\tau_{i,j}^{k}(t)
+						\]
+					</div>
+					<p>
+						The probability of an ant moving to an unvisited city is calculated using a formula that considers the amount of pheromone on the edge between cities (𝒯), the distance between cities (ƞ), the impact of pheromone (⍺), and the impact of distance (β). After ants complete their tours, pheromones on selected edges are updated. Traditional ACO evaporates pheromones with an evaporation rate (ρ) and adds pheromones inversely proportional to tour length.
+					</p>
+					<div style="text-align: center;">
+						\[
+						p_{i,j}^k(t) = \frac{[\tau_{i,j}(t)]^\alpha \cdot [\eta_{i,j}]^\beta}{\sum_{l \in allowed\_nodes} [\tau_{i,l}(t)]^\alpha \cdot [\eta_{i,l}]^\beta}
+						\]
+					</div>
+
+					<p>
+						Max-Min Ant System (MMAS) is a variation of ACO that typically provides reliable solutions to TSP. It differs from traditional ACO in that only the ant with the best solution adds pheromones, which helps prevent domination by a single solution. Additionally, MMAS sets minimum and maximum pheromone levels on edges to encourage exploration of new solutions. Studies have shown that MMAS often yields better solution quality than Iterated Local Search for TSP.
+					</p>
+				</section>
+				<section>
+					<header class="major">
+						<h2>Methodology</h2>
+					</header>
+					<p>
+						When implementing ACO, we modify the added pheromone amount to Q / (L<sup>k</sup>)<sup>2</sup> instead of Q / L<sup>k</sup>
+						to amplify differences in pheromone levels and reduce overlapping edges. We tested this algorithm on various TSP instances with known solutions. Due to the instability of traditional ACO, we finalized the implementation with the Max-Min Ant System (MMAS) for its stability.
+					</p>
+					<p>
+						We conducted a controlled experiment to investigate the effects of key parameters: the pheromone impact factor (⍺), the distance impact factor (β), and the evaporation rate (ρ). Our control group uses ⍺ = 1, β = 7, and ρ = 0.8. We created three sets of experimental groups to vary each parameter:
+
+					</p>
+					<ul>
+						<li>⍺ (Pheromone Impact Factor): Values range from 3 to 19 in steps of 2, resulting in ⍺ = 3, 5, 7, ..., 17, 19 (9 groups).</li>
+						<li>β (Distance Impact Factor): Values range from 1 to 15 in steps of 2, excluding 7 (control group), resulting in β = 1, 3, 5, 9, 11, 13, 15 (7 groups).</li>
+						<li>ρ (Evaporation Rate): Values range from 0.1 to 0.9 in steps of 0.1, excluding 0.8 (control group), resulting in ρ = 0.1, 0.2, ..., 0.7, 0.9 (8 groups).</li>
+					</ul>
+					<p>
+						This results in 1 control group and 24 experimental groups. Each group was tested 20 times to record the mean solution length. We then analyzed the confidence interval of the best-performing group to assess the stability of MMAS for TSP. Performance was evaluated using the following.
+						\[
+						e = \frac{\text{ACO length}}{\text{optimal length}}
+						\]
+					</p>
+
+				</section>
+
+
+
+				<section id="demo">
+					<h2>Pseudocode</h2>
+<pre>
+	function ACO(graph, num_ants, num_iterations, alpha, beta, rho, q):
+		Initialize pheromone levels on edges
+		best_path = []
+		best_distance = Infinity
+		for each iteration:
+			for each ant:
+				current_city = random starting city
+				visited = [current_city]
+				unvisited_cities = all cities except current_city
+				while unvisited_cities is not empty:
+					probabilities = calculate probabilities for each unvisited city
+					next_city = select next city based on probabilities
+					visited.append(next_city)
+					unvisited_cities.remove(next_city)
+				distance = calculate total distance of tour
+				if distance < best_distance:
+					best_distance = distance
+					best_path = visited
+				update pheromone levels on edges based on ant's tour
+			evaporate pheromone on all edges
+			deposit pheromone on edges of best path found so far
+		return best_path, best_distance
+</pre>
+
+
+				</section>
+
+				<section>
+					<header class="major">
+						<h2>Result</h2>
+					</header>
+					<p>
+						The mean lengths are depicted in the following graphs, showcasing the impact of parameter values (α, β, ρ), and performance (e), where a smaller value is preferable.
+					</p>
+					<p>
+						In Figure 1, both the impact of pheromone (α) and distance (β) exhibit a similar influence on performance. Initially, e starts at a high value and decreases as the α or β value increases. Subsequently, it increases after reaching the optimal solution within this set of experimental groups. The lowest e value is observed in the alpha experimental groups when α=7.
+					</p>
+					<p>
+						The behavior of the evaporation rate differs from that of the other two parameters. The e value remains low and stable when the evaporation rate is less than 0.4. However, a positive correlation between e and the evaporation rate is observed in the graph when the evaporation rate exceeds 0.4.
+					</p>
+					<div  style="display: inline;">
+						<article style="display: inline-block;"><img width="600" src="../images/fulls/aco_fig1.png" alt="Figure1" /></article>
+						<article style="display: inline-block;"><img width="300" src="../images/fulls/aco_fig2.png" alt="Figure1" /></article>
+					</div>
+					<p>
+						In Figure 1, the absence of a good solution with small α and β values indicates that the ants may not be considering pheromone or distance sufficiently when constructing solutions. Conversely, a large β value leads to a scenario akin to the nearest neighbor algorithm, where ants consistently choose the closest city. This stability in performance, compared to the larger α, underscores the critical role of considering both distance and pheromone levels for ants to make informed decisions. Similarly, in Figure 2, a very high evaporation rate diminishes the remaining pheromone's impact on the next iteration's edge selection process, essentially nullifying the pheromone information.
+					</p>
+					<p>
+						The experimental group with α=7 demonstrates the best performance. Based on the results of the 20 repeated experiments (e.g., [33548.8, 33600.6, ...]), the confidence level obtained is 99%, with a range of [33558.61813, 33595.33187]. This means that the e value will fall within the range of [1.015032287, 1.016142751] with 99% certainty.
+					</p>
+				</section>
+
+				<section id="four">
+					<div id="contact"></div>
+				</section>
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+	</body>
+</html>

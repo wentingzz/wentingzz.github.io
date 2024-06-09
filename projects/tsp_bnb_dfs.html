@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Wenting's Project - Branch-and-Bound Depth-First Search</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+			$(function(){
+				$("#contact").load("../contact.html");
+			});
+		</script>
+	</head>
+	<body class="is-preload">
+		<div class="back-link">
+			<a href="javascript:history.go(-1)" style="border-bottom: none; ">
+				<span class="icon solid fa-arrow-left" style="font-size: 24px"></span>
+			</a>
+		</div>
+		<!-- Main -->
+			<div id="project">
+				<section id="one">
+					<header class="major">
+						<h2>Branch-and-Bound Depth-First Search to TSP</h2>
+					</header>
+					<p>
+						Branch-and-bound is a search algorithm that systematically explores the solution space of combinatorial problems. It builds a tree of subproblems, "branching" to explore different routes and "bounding" to eliminate non-promising routes based on a heuristic lower bound. The heuristic helps estimate the minimum cost from the current node to complete the tour, allowing the algorithm to prune branches that cannot lead to an optimal solution. Depth-First Search, on the other hand, is a graph traversal algorithm that starts at the root node and traverses as deeply as possible before backtracking and exploring another route.
+					</p>
+					<p>
+						Putting these two algorithms together, we get a Branch-and-Bound Depth-First search solution to the TSP problem. Using Depth First Search, this solution will traverse through the graph nodes and calculate the cost of the path, f(n) = g(n) + h(n), where g(n) is the known cost of the path from the start node to the current node and h(n) is the heuristic, the approximation of the unknown cost of the path from the current node to the end node. The Branch-and-Bound portion of this solution utilizes an upper bounded path cost that helps to prune sub-optimal routes. For each repetition, as long as f(n) is less than the upper bound, we continue to traverse. As soon as f(n) becomes larger than the upper bound, we prune and backtrack to another route. For the first traversal, the upper bound is set to infinity.
+
+						<a href="#demo" style="border-bottom: none; "> See Pseudocode
+							<span class="icon solid fa-arrow-right"></span>
+						</a>
+					</p>
+				</section>
+				<section>
+					<header class="major">
+						<h2>Methodology</h2>
+					</header>
+					<p>
+						Note that, in our design, we implement the Nearest Neighbor as our heuristic algorithm. This pseudo-code provides a framework for the Branch-and-Bound DFS algorithm with the Nearest Neighbor heuristic.
+
+					</p>
+					<ul>
+						<li>BnB_DFS function: This function initializes the search and sets the best tour distance, the upper bound, to infinity, meaning that no tour has been found yet. It then starts the DFS process from an initial city.</li>
+						<li>DFS function: It recursively explores further cities, extending the path as it goes. During the process, it checks if all cities are visited, then calculates the total cost of returning to the start city. If this is a new best, it updates the best path and cost. If there are still unvisited cities, for each unvisited city, it calculates the estimated total cost (current cost plus the estimate to complete the tour obtained from the Nearest Neighbor heuristic) and continues with DFS if this estimate is under the current best cost (Upper bound).</li>
+						<li>NN_heuristic function: It estimates the cost to complete the tour from the given city using the Nearest Neighbor heuristic.</li>
+					</ul>
+				</section>
+
+
+
+				<section id="demo">
+					<h2>Pseudocode</h2>
+<pre>
+function NN_heuristic(graph, current_city, visited, start_city):
+    heuristic_cost = 0
+    unvisited_cities = graph.cities - visited
+    while unvisited_cities is not empty:
+        nearest_city = find the nearest city from current_city in unvisited_cities
+        heuristic_cost += graph.distance(current_city, nearest_city)
+        current_city = nearest_city
+        remove nearest_city from unvisited_cities
+    heuristic_cost += graph.distance(current_city, start_city)  # back to the start point
+    return heuristic_cost
+
+function DFS (graph, current_city, path, visited, current_cost, start_city, best_cost, best_path):
+    if all cities are visited:
+        complete_path = (path.push(start_city)).toList()  # back to the start point
+        complete_cost = current_cost + graph.distance(current_city, start_city)
+        if complete_cost < best_cost:
+            best_cost = complete_cost
+            best_path = complete_path
+            return
+    for next_city in all the neighbors of current_city:
+        if next_city is not visited:
+            g_next = current_cost + graph.distance(current_city, next_city)
+            h_next = NN_heuristic(graph, next_city, visited)
+            f_next = g_next + h_next
+            if f_next < best_cost:
+                path.push(next_city)
+                visited.append(next_city)
+                DFS(graph, next_city, path, visited, next_cost, start_city)
+                path.pop()
+                visited.pop()
+
+function BnB_DFS(graph):
+    best_cost = Infinity
+    best_path = an empty list
+    start_city = select any city from the graph
+    current_tour = a stack with only the start_city inside
+    visited = a list with only the start_city inside
+    DFS(graph, start_city, current_tour, visited, 0, start_city, best_cost, best_path)
+    return best_path, best_cost
+</pre>
+
+
+				</section>
+
+				<section>
+					<header class="major">
+						<h2>Result</h2>
+					</header>
+					<p>
+						Time complexity: Although BnB may significantly reduce the actual time complexity via the effectiveness of pruning, this algorithm is still a DFS. In the worst case, this could be <i>O(b<sup>m</sup>)</i>, where b is the branching factor (average number of successors per state) and m is the maximum depth of the search tree. It happens when the solution is at the deepest level or when there's no pruning possible.
+					</p>
+					<p>
+						Space complexity: It can be less since it prunes branches that exceed the current best solution, but the worst-case scenario remains the same as regular DFS, that is, <i>O(bm)</i>.
+					</p>
+					<div style="display: inline;">
+						<img width="100%" src="../images/fulls/bnb_dfs_fig1.png" alt="Figure1" />
+					</div>
+					<p>
+						As the results shown above, we can see that the branch-and-bound depth-first search with the nearest neighbor heuristic can work well in some scenarios. The nearest neighbor heuristic often produces a reasonable path by always moving to the nearest unvisited city. Branch-and-Bound further explores and prunes branches in the search space, ensuring that the algorithm does not explore paths that are already longer than the best-known solution.
+
+					</p>
+					<p>
+						However, this approach only really works well for smaller instances of TSP, where the number of cities is not too large. For smaller-scale problems (N < 100), we achieve relatively precise results within a reasonable time frame.  In cases where N is equal to or exceeds 100, we encounter prohibitive execution times due to the exponential increase in the search space. It can be computationally expensive for large instances, as the number of possible routes increases factorially with the number of cities. The depth-first nature of the search can also spend a lot of time exploring suboptimal branches.
+
+					</p>
+
+					<p>
+						The obvious area for improvement in our algorithm is thus the heuristic. KNN heuristic is less sophisticated than others (such as k-opt, Christofides algorithm, Lin-Kernighan Heuristicand, etc ) and thus allows for our algorithm to spend more time than necessary exploring the sub-optimal branches. Essentially, using a more robust heuristic algorithm could help us to prune/factor out sub-optimal paths much earlier, which will help with our program runtime.
+
+					</p>
+					<p>
+						For future improvement, it would also be helpful to leverage modern computational techniques such as parallel processing. Working multithreading into our algorithm would also help in the runtime, especially in the case that we allow multiple threads to traverse different branches at the same time. Adding multithreading would increase the implementation difficulty of our algorithm especially in terms of isolating shared variables such as visited nodes, heuristic, etc. to allow for coherent and accurate read/writes. However, despite the increased implementation difficulty, the runtime of our algorithm would theoretically decrease due to parallel processing allowing for multiple branches to be explored at once.
+
+					</p>
+
+				</section>
+
+				<section id="four">
+					<div id="contact"></div>
+				</section>
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+	</body>
+</html>

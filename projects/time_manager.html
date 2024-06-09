@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Wenting's Project - Time Manager</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+			$(function(){
+				$("#contact").load("../contact.html");
+			});
+		</script>
+	</head>
+	<body class="is-preload">
+		<div class="back-link">
+			<a href="javascript:history.go(-1)" style="border-bottom: none; ">
+				<span class="icon solid fa-arrow-left" style="font-size: 24px"></span>
+			</a>
+		</div>
+		<!-- Main -->
+			<div id="project">
+				<section id="one">
+					<header class="major">
+						<h2>Time Manager</h2>
+					</header>
+					<p>The Time Manager App is designed to optimize your daily schedule by predicting the time required to complete various tasks and fitting them into your calendar. Leveraging machine learning, this app processes data from three key files—Tasks_Training.xlsx, Events_test.txt, and Tasks_test.xlsx—to train a model that accurately estimates task durations and schedules them efficiently. Additionally, the app seamlessly integrates with Google Calendar to automatically create events for your tasks.
+						<a href="#demo" style="border-bottom: none; "> See Demo
+							<span class="icon solid fa-arrow-right"></span>
+						</a>
+					</p>
+				</section>
+
+				<section id="features">
+					<h2>Key Features</h2>
+					<div class="features">
+						<article>
+							<span class="icon solid fa-lightbulb"></span>
+							<div class="content">
+								<h3>Model Training & Prediction</h3>
+								<p>Trains a machine learning model using the data from Tasks_Training.xlsx to predict the time required for tasks listed in Tasks_test.xlsx.</p>
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-clock"></span>
+							<div class="content">
+								<h3>User Preferences</h3>
+								<p>Prompts the user to input their preferred working hours, aiming to schedule tasks within these time blocks.</p>
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-list-check"></span>
+							<div class="content">
+								<h3>Task Scheduling</h3>
+								<p>Fits the tasks into the user's preferred working hours while meeting the specified deadlines. It ensures that there are no conflicts with events already scheduled in the calendar.</p>
+							</div>
+						</article>
+
+						<article>
+							<span class="icon regular fa-calendar-days"></span>
+							<div class="content">
+								<h3>Google Calendar Integration</h3>
+								<p>Connects to Google Calendar to automatically create events for the scheduled tasks. This feature ensures that all tasks are seamlessly integrated into the user's existing calendar, enhancing organization and productivity.</p>
+							</div>
+						</article>
+					</div>
+				</section>
+
+				<section id="more">
+					<h2>More Details</h2>
+					<div class="features">
+						<article>
+							<i class="icon solid fa-code"></i>
+							<div class="content">
+								<h3>Technology Stack</h3>
+								<p>Tech: Python, Sklearn<br/>
+									Data: Tasks_Training.xlsx, Events_test.txt, Tasks_test.xlsx</p>
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-award"></span>
+							<div class="content">
+								<h3>Achievements</h3>
+								<p>1st Place of 2019 DiamondHacks, Hackathon at NC State University</p>
+							</div>
+						</article>
+					</div>
+				</section>
+
+				<section id="demo">
+					<h2>Demo</h2>
+					<video controls>
+						<source src="../images/others/time_manager.mp4" type="video/mp4">
+						Your browser does not support the audio element.
+					</video>
+					<p>In this demo, the app aims to efficiently manage tasks and events within a user's schedule. On the left side of the screen, users can view their input files, which include existing events and tasks to complete. On the right side, the app dynamically organizes these tasks to fit into the user's preferred working hours while respecting specified deadlines and avoiding conflicts with existing events. If certain tasks cannot be accommodated within the preferred working hours, the app notifies the user with a warning message advising them to use their leisure time for these tasks.</p>
+					<p>
+					The app also integrates with Google Calendar, allowing users to see the scheduled tasks added to their calendar. Users can choose to hide these tasks by unselecting the "Time Manager Suggested" calendar. Additionally, by connecting their Google Calendar to the app, users can enable automatic creation of events for the scheduled tasks, ensuring that only tasks that fit into their preferred working time are added to the calendar.</p>
+
+
+
+				</section>
+
+				<section id="four">
+					<div id="contact"></div>
+				</section>
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

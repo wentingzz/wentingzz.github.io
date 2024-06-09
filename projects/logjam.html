@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Wenting's Project - Logjam.Next</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+			$(function(){
+				$("#contact").load("../contact.html");
+			});
+		</script>
+	</head>
+	<body class="is-preload">
+		<div class="back-link">
+			<a href="javascript:history.go(-1)" style="border-bottom: none; ">
+				<span class="icon solid fa-arrow-left" style="font-size: 24px"></span>
+			</a>
+		</div>
+		<!-- Main -->
+			<div id="project">
+				<section id="one">
+					<header class="major">
+						<h2>Logjam.Next</h2>
+					</header>
+					<p>Logjam.Next was developed specifically for NetApp to address the unique challenges they face in managing and analyzing log data. NetApp, as a leading provider of data management solutions, handles vast amounts of log data from various sources. Logjam.Next aims to enhance NetApp's ability to process and analyze this data efficiently, providing them with valuable insights to improve their products and services. By leveraging the latest technologies and best practices in log processing, Logjam.Next is tailored to meet NetApp's specific requirements, ensuring seamless integration and optimal performance within their existing infrastructure.
+						<a href="#demo" style="border-bottom: none; "> See Screenshots
+							<span class="icon solid fa-arrow-right"></span>
+						</a>
+					</p>
+				</section>
+
+				<section id="features">
+					<h2>Key Features</h2>
+					<div class="features">
+						<article>
+							<span class="icon solid fa-sitemap"></span>
+							<div class="content">
+								<h3>Parallel Processing</h3>
+								<p>Processes nodes in parallel, allowing for faster and more efficient log analysis, especially when handling large volumes of data.</p>
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-list-check"></span>
+							<div class="content">
+								<h3>Task Resumption</h3>
+								<p>Picks up the last interrupted task and resumes work from that point. This ensures that log processing tasks can be resumed without loss of progress, even in the event of interruptions or failures.</p>
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-magnifying-glass"></span>
+							<div class="content">
+								<h3>Abnormal Log Detection</h3>
+								<p>Detects abnormal logs, which is crucial for identifying potential issues or anomalies within the system.</p>
+							</div>
+						</article>
+
+						<article>
+							<span class="icon regular fa-paper-plane"></span>
+							<div class="content">
+								<h3>Interactive Web Interface</h3>
+								<p>Provides an interactive web interface, which makes it easier for users to analyze and understand the log data visually.</p>
+							</div>
+						</article>
+					</div>
+				</section>
+
+				<section id="more">
+					<h2>More Details</h2>
+					<div class="features">
+						<article>
+							<i class="icon solid fa-code"></i>
+							<div class="content">
+								<h3>Technology Stack</h3>
+								<p>Backend: Python, Flask, REST APIs<br/>
+									Frontend: Vue.js<br/>
+									Data Storage: ElasticSearch<br/>
+									CI/CD: Docker
+								</p>
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-award"></span>
+							<div class="content">
+								<h3>Achievements</h3>
+
+								<p><a href="https://www.csc.ncsu.edu/news/2292">Senior Design</a> @ NC State University </p>
+							</div>
+						</article>
+					</div>
+				</section>
+				<section>
+					<h2>Flow</h2>
+					<div style="text-align: center;">
+						<img width="90%" src="../images/fulls/logjam_cover.png" alt="" />
+					</div>
+				</section>
+
+				<section id="demo">
+					<h2>Demo</h2>
+					<video controls>
+						<source src="../images/others/logjam_backend.mp4" type="video/mp4">
+						Your browser does not support the audio element.
+					</video>
+					<p>The video above illustrates the flow of Logjam.Next, a log processing tool. Data is initially stored in NFS. If the data is zipped, nodes are extracted. Multiple threads are then utilized to process these nodes in parallel, improving program speed as this is a bottleneck. The extracted nodes are inserted into ElasticSearch using REST APIs. </p>
+
+
+					<div>
+						<img width="90%" src="../images/fulls/logjam.png" alt="" />
+					</div>
+					<p>After all nodes are inserted, the system gains a comprehensive understanding of normal log file patterns. The NetApp Support team can then access the UI, as depicted in the image below, to paste a log and analyze its normality. Users can also specify the platform and versions they are using or leave the default choice as All Platform/Version for general diagnosis.</p>
+
+
+				</section>
+
+				<section id="four">
+					<div id="contact"></div>
+				</section>
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
