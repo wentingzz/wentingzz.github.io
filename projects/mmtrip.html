@@ -11,11 +11,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 	</head>
 	<body class="is-preload">
 		<div class="back-link">
-			<a href="javascript:history.go(-1)" style="border-bottom: none; ">
+			<a href="javascript:void(0);" onclick="checkHistory()" style="border-bottom: none; ">
 				<span class="icon solid fa-arrow-left" style="font-size: 24px"></span>
 			</a>
 		</div>
@@ -24,7 +23,7 @@
 			<div id="project">
 				<section id="one">
 					<header class="major">
-						<h2>MMTrip</h2>
+						<h2><a href="#more" class="icon solid fa-award"> MMTrip</a></h2>
 					</header>
 					<p>The motivation behind MMTrip stems from the increasing complexity of urban transportation systems and the growing demand for efficient and integrated mobility solutions. With the expansion of urbanization, there has been a rise in the variety of transportation modes available, ranging from public transport to ride-sharing services and cycling options. However, this diversity also complicates the process of trip planning, requiring individuals to navigate through multiple options and considerations to find the optimal route.
 					</p>
@@ -46,7 +45,7 @@
 						<article>
 							<span class="icon solid fa-route"></span>
 							<div class="content">
-								<h3>Multi-Modal Route</h3>
+								<h3>Multi-Modal Routing</h3>
 								<p>One-click access to door-to-door routes considering combinations of flights, public transit, driving, biking, and walking.</p>
 							</div>
 						</article>
@@ -90,7 +89,7 @@
 							<span class="icon solid fa-award"></span>
 							<div class="content">
 								<h3>Achievements</h3>
-								<p>1st Place of IISE-CIS Mobile App Competition</p>
+								<p>1st Place of <a href="https://www.iise.org/Details.aspx?id=33697">IISE-CIS Mobile App Competition</a></p>
 							</div>
 						</article>
 					</div>
@@ -102,6 +101,18 @@
 						<source src="../images/others/mmtrip_demo.mp4" type="video/mp4">
 						Your browser does not support the audio element.
 					</video>
+					<p>
+						From the home page, users can input their trip details, including travel locations, dates, number of bags, passengers, and preferred transportation modes. They can opt to have MMtrip select flights for them, which then directs them to the routes page. Here, a similar search bar is available with additional filtering options to refine the displayed routes in a table format. Each row represents a route option and displays details such as departure and arrival times, duration, route specifics, cost, and a booking link.
+					</p>
+					<p>
+						Clicking on a specific route row will display the route on a map. Icons within the route details cell become clickable, allowing users to zoom in to view nodes and edges. Hovering over different edges reveals more details such as travel time, transportation mode, duration, cost, bus lines, and number of stops. Clicking on a node displays the node's address, arrival/departure times, and options to view points of interest (POIs).
+					</p>
+					<p>
+						Users also have the option to select their own flights. On the Flight Selection page, various filtering options are provided, including airports, number of stops, airlines, price, times, duration, and flight class. The available flights are displayed in a table showing airline, time, airports, duration, stops, carbon dioxide emissions, and price. Clicking on a flight provides more detailed information, such as layover times and flight numbers. After selecting their preferred flight(s), users can click continue, and MMtrip will generate routes based on their selections.
+					</p>
+					<p>
+						Once users are satisfied with their chosen route, they can click on the booking link to proceed with flight booking, with MMtrip attempting to pre-fill the necessary information.
+					</p>
 				</section>
 
 				<section>
@@ -118,11 +129,8 @@
 			<script src="../assets/js/main.js"></script>
 
 			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-			<script>
-				$(function(){
-					$("#contact").load("../contact.html");
-				});
-			</script>
+		    <script src="project_page.js"></script>
+
 
 	</body>
 </html>

@@ -11,17 +11,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script>
-			$(function(){
-				$("#contact").load("../contact.html");
-			});
-		</script>
 	</head>
 	<body class="is-preload">
 		<div class="back-link">
-			<a href="javascript:history.go(-1)" style="border-bottom: none; ">
+			<a href="javascript:void(0);" onclick="checkHistory()" style="border-bottom: none; ">
 				<span class="icon solid fa-arrow-left" style="font-size: 24px"></span>
 			</a>
 		</div>
@@ -29,7 +22,7 @@
 			<div id="project">
 				<section id="one">
 					<header class="major">
-						<h2>Time Manager</h2>
+						<h2><a href="#more" class="icon solid fa-award"> Time Manager</a></h2>
 					</header>
 					<p>The Time Manager App is designed to optimize your daily schedule by predicting the time required to complete various tasks and fitting them into your calendar. Leveraging machine learning, this app processes data from three key files—Tasks_Training.xlsx, Events_test.txt, and Tasks_test.xlsx—to train a model that accurately estimates task durations and schedules them efficiently. Additionally, the app seamlessly integrates with Google Calendar to automatically create events for your tasks.
 						<a href="#demo" style="border-bottom: none; "> See Demo
@@ -88,7 +81,7 @@
 							<span class="icon solid fa-award"></span>
 							<div class="content">
 								<h3>Achievements</h3>
-								<p>1st Place of 2019 DiamondHacks, Hackathon at NC State University</p>
+								<p><a href="https://devpost.com/software/time-manager-your-virtual-personal-assistant">Best Overall Award of 2019 DiamondHacks</a>
 							</div>
 						</article>
 					</div>
@@ -122,6 +115,8 @@
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
+			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+			<script src="project_page.js"></script>
 
 	</body>
 </html>

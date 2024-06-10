@@ -12,16 +12,12 @@
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script>
-			$(function(){
-				$("#contact").load("../contact.html");
-			});
-		</script>
+
+
 	</head>
 	<body class="is-preload">
 		<div class="back-link">
-			<a href="javascript:history.go(-1)" style="border-bottom: none; ">
+			<a href="javascript:void(0);" onclick="checkHistory()" style="border-bottom: none; ">
 				<span class="icon solid fa-arrow-left" style="font-size: 24px"></span>
 			</a>
 		</div>
@@ -29,14 +25,14 @@
 			<div id="project">
 				<section id="one">
 					<header class="major">
-						<h2>iTrust2</h2>
+						<h2><a href="https://github.com/wentingzz/csc326-GP" class="icon brands fa-github"> iTrust2</a></h2>
 					</header>
 					<p>
 						iTrust2 originated as a project for the CSC326 Software Engineering course in the Computer Science Department at NC State University. It is primarily maintained by Kai Presler-Marshall and Sarah Heckman. The goal of iTrust2 is to immerse students in software engineering practices through a substantial, relevant, and evolving application that incorporates security and privacy requirements. If you're interested in using iTrust2 for your software engineering course, please don't hesitate to get in touch with us.
 					</p>
 					<p>
 						iTrust2 is an electronic health records system (EHR) designed to empower patients to manage their health records and communicate with their healthcare providers (HCPs). Healthcare providers can use iTrust2 to document office visits, including basic health metrics, diagnoses, prescriptions, eye care, and pregnancy care. iTrust2 adheres to HIPAA regulations to ensure the security and privacy of patient records.
-						<a href="#demo" style="border-bottom: none; "> See Screenshots
+						<a href="#demo" style="border-bottom: none; "> See Snapshot
 							<span class="icon solid fa-arrow-right"></span>
 						</a>
 					</p>
@@ -94,15 +90,15 @@
 						<article>
 							<span class="icon solid fa-certificate"></span>
 							<div class="content">
-								<h3>Achievements</h3>
-								<p>Senior Design @ NC State University</p>
+								<h3>Milestone</h3>
+								<p>1st Full-Stack Project</p>
 							</div>
 						</article>
 					</div>
 				</section>
 
 				<section id="demo">
-					<h2>Screenshots</h2>
+					<h2>Snapshot</h2>
 					<div class="features">
 						<article><img class="content" src="../images/fulls/itrust2.jpg" alt="" /></article>
 					</div>
@@ -124,6 +120,8 @@
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
+			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+			<script src="project_page.js"></script>
 
 	</body>
 </html>

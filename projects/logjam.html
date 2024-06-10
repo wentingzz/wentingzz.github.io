@@ -12,16 +12,10 @@
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script>
-			$(function(){
-				$("#contact").load("../contact.html");
-			});
-		</script>
 	</head>
 	<body class="is-preload">
 		<div class="back-link">
-			<a href="javascript:history.go(-1)" style="border-bottom: none; ">
+			<a href="javascript:void(0);" onclick="checkHistory()" style="border-bottom: none; ">
 				<span class="icon solid fa-arrow-left" style="font-size: 24px"></span>
 			</a>
 		</div>
@@ -29,10 +23,10 @@
 			<div id="project">
 				<section id="one">
 					<header class="major">
-						<h2>Logjam.Next</h2>
+						<h2><a href="https://github.com/wentingzz/LogjamNext" class="icon brands fa-github"> Logjam.Next</a></h2>
 					</header>
 					<p>Logjam.Next was developed specifically for NetApp to address the unique challenges they face in managing and analyzing log data. NetApp, as a leading provider of data management solutions, handles vast amounts of log data from various sources. Logjam.Next aims to enhance NetApp's ability to process and analyze this data efficiently, providing them with valuable insights to improve their products and services. By leveraging the latest technologies and best practices in log processing, Logjam.Next is tailored to meet NetApp's specific requirements, ensuring seamless integration and optimal performance within their existing infrastructure.
-						<a href="#demo" style="border-bottom: none; "> See Screenshots
+						<a href="#demo" style="border-bottom: none; "> See Snapshot
 							<span class="icon solid fa-arrow-right"></span>
 						</a>
 					</p>
@@ -88,9 +82,9 @@
 							</div>
 						</article>
 						<article>
-							<span class="icon solid fa-award"></span>
+							<span class="icon solid fa-certificate"></span>
 							<div class="content">
-								<h3>Achievements</h3>
+								<h3>Milestone</h3>
 
 								<p><a href="https://www.csc.ncsu.edu/news/2292">Senior Design</a> @ NC State University </p>
 							</div>
@@ -135,6 +129,8 @@
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
+			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+			<script src="project_page.js"></script>
 
 	</body>
 </html>

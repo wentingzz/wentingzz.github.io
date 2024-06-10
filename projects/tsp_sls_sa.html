@@ -11,17 +11,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script>
-			$(function(){
-				$("#contact").load("../contact.html");
-			});
-		</script>
 	</head>
 	<body class="is-preload">
 		<div class="back-link">
-			<a href="javascript:history.go(-1)" style="border-bottom: none; ">
+			<a href="javascript:void(0);" onclick="checkHistory()" style="border-bottom: none; ">
 				<span class="icon solid fa-arrow-left" style="font-size: 24px"></span>
 			</a>
 		</div>
@@ -29,7 +22,7 @@
 			<div id="project">
 				<section id="one">
 					<header class="major">
-						<h2>Stochastic Local Search with Simulated Annealing to TSP</h2>
+						<h2><a href="https://github.com/wentingzz/BnB-DFS-and-SLS-SA" class="icon brands fa-github"> Stochastic Local Search with Simulated Annealing to TSP</a></h2>
 					</header>
 					<p>
 						Stochastic Local Search (SLS) is a general optimization technique used to find approximate solutions to combinatorial optimization problems. Within the realm of SLS, "simple SLS methods" permit exploration beyond local optima by considering worsening neighbors. In contrast to complex strategies, these methods rely on a single search step within a fixed neighborhood relation (Hoos & Stützle, 2015, section 54.3). Simulated Annealing (SA) is a prime example, employing a temperature-based strategy to accept moves to worse solutions. The acceptance of worsening solutions is governed by a temperature parameter, which is gradually reduced over the course of the optimization process according to a predefined schedule.
@@ -130,7 +123,8 @@ function SLS_with_SA(problem, schedule) returns solution state s :
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
-	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
+			<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+			<script src="project_page.js"></script>
 	</body>
 </html>

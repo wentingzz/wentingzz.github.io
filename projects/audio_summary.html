@@ -12,16 +12,11 @@
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script>
-			$(function(){
-				$("#contact").load("../contact.html");
-			});
-		</script>
+
 	</head>
 	<body class="is-preload">
 		<div class="back-link">
-			<a href="javascript:history.go(-1)" style="border-bottom: none; ">
+			<a href="javascript:void(0);" onclick="checkHistory()" style="border-bottom: none; ">
 				<span class="icon solid fa-arrow-left" style="font-size: 24px"></span>
 			</a>
 		</div>
@@ -29,7 +24,7 @@
 			<div id="project">
 				<section id="one">
 					<header class="major">
-						<h2>Audio Summary</h2>
+						<h2><a href="https://github.com/wentingzz/Audio-Summary/" class="icon brands fa-github"> Audio Summary</a></h2>
 					</header>
 					<p>AudioSummary empowers users to unlock the essence of spoken content effortlessly. Transforming lengthy audio files into concise, informative summaries, it saves time and enhances productivity. With AudioSummary, dive deeper into the world of audio content, uncovering key insights with ease.
 						<a href="#demo" style="border-bottom: none; "> See Demo
@@ -81,21 +76,27 @@
 							<div class="content">
 								<h3>Technology Stack</h3>
 								<p>Languages: Python, Gradio<br/>
-									Libraries: Langchain, Hugging Face Transformers, IBM Watson, IBM WatsonxLLM Extension, Llama</p>
+									Libraries: Langchain, Hugging Face Transformers, IBM Watson, IBM WatsonxLLM Extension, Llama
+								</p>
 							</div>
 						</article>
 						<article>
 							<span class="icon solid fa-stamp"></span>
 							<div class="content">
-								<h3>Achievements</h3>
-								<p>IBM AI Developer Professional Certificate</p>
+								<h3>Certificates</h3>
+								<p>
+									<a href="https://www.coursera.org/account/accomplishments/specialization/FM4BA4PQDGS6">IBM AI Developer Professional</a><br/>
+									<a href="https://www.coursera.org/account/accomplishments/specialization/RVKAGXHR8VB2">Generative AI for Software Developers</a>
+								</p>
 							</div>
 						</article>
 					</div>
 				</section>
 
 				<section id="demo">
-					<h2>Demo</h2>
+					<h2>Demo
+						<a href="https://github.com/wentingzz/Audio-Summary/" class="icon brands fa-github"></a>
+					</h2>
 					<video controls>
 						<source src="../images/others/audio_summary.mp4" type="video/mp4">
 						Your browser does not support the audio element.
@@ -114,6 +115,7 @@
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
-
+			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+			<script src="project_page.js"></script>
 	</body>
 </html>

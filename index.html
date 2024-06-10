@@ -9,23 +9,18 @@
 		<title>Wenting's Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<script>
-			$(function(){
-				$("#contact").load("../contact.html");
-			});
-		</script>
+
 	</head>
 	<body class="is-preload">
 
 	<!-- Header -->
 		<header id="header">
 			<div class="inner">
-				<a href="#" class="image avatar"><img src="images/Wenting.jpg" alt="" /></a>
+				<a href="index.html" class="image avatar"><img src="images/Wenting.jpg" alt="" /></a>
 				<h1><strong>I'm Wenting</strong>, an experienced developer<br />
 					with 3-year fullstack work experience<br />
-					+ Bachelor's & Master's in CS.<br />
+					+ Master's & Bachelor's in CS.<br />
 					Active tech explorer
 <!--					Skilled with Python, Java, React, and more<br/>-->
 <!--					Actively learning Generative AI, and more-->
@@ -41,88 +36,59 @@
 					<h2>Introduction</h2>
 				</header>
 				<p>
-					Welcome to my portfolio! I'm Wenting, a software developer with expertise in full-stack web development and a passion for AI. With a master's degree in Computer Science and three years of experience, I excel in JavaScript, Python, and cutting-edge technologies.
+					Welcome to my portfolio! I'm Wenting, a software developer with expertise in full-stack web development and a passion for AI. With a master's degree in Computer Science and three years of experience, I excel in MS SQL Server, Django, React, Git and cutting-edge technologies.
 					<br/>
 					My journey in software development has been enriched by diverse projects. I led the frontend development for MMTrip, a multi-modal trip planner app, using React and Google APIs. I also played a key role in the backend development of iTrust2, an Electronic Health Record system, implementing role-based access control and prescription management.
 					<br/>
-					In addition to my professional work, I actively pursue side projects to expand my skills and knowledge. I am currently exploring the exciting field of AI, focusing on generative AI and other LLMs. I am passionate about learning and continuously seek opportunities to grow and challenge myself.
+					Outside of my professional endeavors, I actively engage in side projects to broaden my skills and understanding. Currently, I am delving into the dynamic field of AI, particularly focusing on generative AI and other LLMs. My passion for learning drives me to seek out new challenges and opportunities for growth.
 					<br/>
 					I invite you to explore my portfolio to learn more about these projects and others. If you're interested in collaborating or have any questions, please don't hesitate to reach out. Thank you for visiting!
 				</p>
-<!--				<p>An experienced software developer with a strong foundation in database management, frontend and backend development, and over three years of industry experience working effectively within diverse team environments. Proficient in JavaScript, ReactJS, NodeJS, Python, Flask, and SQL, with a proven track record in designing scalable systems, developing dynamic web interfaces, and implementing efficient backend solutions.</p>-->
-<!--				<ul class="actions">-->
-<!--					<li><a href="#" class="button">Learn More</a></li>-->
-<!--				</ul>-->
 			</section>
 
 		<!-- Two -->
-			<section id="two">
-				<h2>Projects</h2>
+			<section id="project">
+				<h2><a href="projects.html" style="border-bottom:none">Projects</a></h2>
 				<div class="row">
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="projects/mmtrip.html" >
-							<div class="image fit thumb" >
-								<img src="images/fulls/mmtrip.jfif" alt="" />
-							</div>
-						</a>
-						<h3>MMTrip</h3>
-						<p>Personalized trip planner</p>
-					</article>
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="projects/audio_summary.html" >
-							<div class="image fit thumb" >
-								<img src="images/fulls/audio_summary.png" alt="" />
-							</div>
-						</a>
-						<h3>Audio Summary</h3>
-						<p>AI-powered audio summarization</p>
-					</article>
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="projects\nutriplan.html" >
-							<div class="image fit thumb" >
-								<img src="images/fulls/nutriplan.png" alt="" />
-							</div>
-						</a>
-						<h3>NutriPlan</h3>
-						<p>Personalized nutrition planning mobile app</p>
-					</article>
-
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="projects\time_manager.html" >
-							<div class="image fit thumb" >
-								<img src="images/fulls/calendar.png" alt="" />
-							</div>
-						</a>
-						<h3>Time Manager App</h3>
-						<p></p>
-					</article>
-
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="projects/get_my_paper.html" >
-							<div class="image fit thumb" >
-								<img src="images/fulls/get_my_paper.jfif" alt="" />
-							</div>
-						</a>
-						<h3>Get My Paper</h3>
-						<p>Web scraper to download papers</p>
-					</article>
-
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="projects.html#tsp" >
-							<div class="image fit thumb" >
-								<img src="images/fulls/tsp.png" alt="" />
-							</div>
-						</a>
-						<h3>TSP Algorithms</h3>
-						<p>Ant Colony Optimization<br/>
-							Branch-and-Bound Depth-First Search<br/>
-							Stochastic Local Search with Simulated Annealing
-						</p>
-					</article>
+					<article class="col-6 col-12-xsmall work-item" data-project="MMTrip"></article>
+					<article class="col-6 col-12-xsmall work-item" data-project="Audio Summary"></article>
+					<article class="col-6 col-12-xsmall work-item" data-project="NutriPlan"></article>
+					<article class="col-6 col-12-xsmall work-item" data-project="Time Manager"></article>
+					<article class="col-6 col-12-xsmall work-item" data-project="Get My Paper"></article>
+					<article class="col-6 col-12-xsmall work-item" data-project="TSP Algorithms"></article>
 				</div>
 				<ul class="actions">
 					<li><a href="projects.html" class="button">View All Projects</a></li>
 				</ul>
+			</section>
+
+			<section>
+				<h2>Achievements</h2>
+				<p><span class="icon solid fa-award"></span> 1st Place of <a href="https://www.iise.org/Details.aspx?id=33697">IISE-CIS Mobile App Competition</a>: MMTrip</p>
+				<p><span class="icon solid fa-award"></span> Best Overall Award of <a href="https://devpost.com/software/time-manager-your-virtual-personal-assistant">2019 DiamondHacks</a>: Time Manager</p>
+				<p><span class="icon solid fa-award"></span> Best Performance in <a href="https://www.csc.ncsu.edu/courses/outcomes.php?uniq_id=44">Independent Research</a>: Ant Colony Optimization to TSP</p>
+
+				<p>
+					<span class="icon solid fa-stamp"></span> Certificate of
+					<a href="https://www.coursera.org/account/accomplishments/specialization/FM4BA4PQDGS6">IBM AI Developer Professional</a>
+				</p>
+				<p>
+					<span class="icon solid fa-stamp"></span> Certificate of
+					<a href="https://www.coursera.org/account/accomplishments/specialization/RVKAGXHR8VB2">Generative AI for Software Developers</a>
+				</p>
+
+				<p>
+					<span class="icon solid fa-stamp"></span> Certificate of Level I CRLA Tutoring
+					<a href="#"></a>
+				</p>
+
+
+
+
+
+
+
+
 			</section>
 
 		<!-- Three -->
@@ -132,27 +98,25 @@
 
 		</div>
 
-	<!-- Footer -->
-		<footer id="footer">
-			<div class="inner">
-				<ul class="icons">
-					<li><a href="https://github.com/wentingzz" class="icon brands fa-github"><span class="label">Github</span></a></li>
-					<li><a href="https://wentingzz.github.io/" class="icon brands fa-dribbble"><span class="label">Portfolio</span></a></li>
-					<li><a href="mailto:wentiz10@uci.edu" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-				</ul>
-				<ul class="copyright">
-					<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</div>
-		</footer>
+		<!-- Footer -->
+		<div id="footer"></div>
 
-	<!-- Scripts -->
+
+		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.poptrox.min.js"></script>
 		<script src="assets/js/browser.min.js"></script>
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+			$(function(){
+				$("#contact").load("../contact.html");
+				$("#footer").load("../footer.html");
+			});
+		</script>
+        <script src="script.js"></script>
 
 	</body>
 </html>

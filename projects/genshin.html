@@ -15,7 +15,7 @@
 	</head>
 	<body class="is-preload">
 		<div class="back-link">
-			<a href="javascript:history.go(-1)" style="border-bottom: none; ">
+			<a href="javascript:void(0);" onclick="checkHistory()" style="border-bottom: none; ">
 				<span class="icon solid fa-arrow-left" style="font-size: 24px"></span>
 			</a>
 		</div>
@@ -24,13 +24,22 @@
 			<div id="project">
 				<section id="one">
 					<header class="major">
-						<h2>Genshin Impact Planner</h2>
+						<header class="major">
+							<h2>
+								<a href="https://docs.google.com/spreadsheets/d/198UmS68BDU2c2Uj2WKFhDkvU0QyBQ2Tl4TohJqJC-8g/edit?gid=888672804#gid=888672804" style="border-bottom: none">
+									<div style="width: 24px; height: 35px; background-image: url('../images/fulls/sheets.png'); background-size: cover; display: inline-block;"></div>
+									Genshin Impact Planner
+								</a>
+							</h2>
+						</header>
 					</header>
-					<p>The motivation behind developing this app was to address the challenge of efficiently managing and tracking the upgrade progress of multiple characters and weapons simultaneously in Genshin Impact. With the game's complex upgrade system requiring different materials and priorities for each character and weapon, it can be overwhelming to keep track of everything manually. This app simplifies the process by automating the calculation of required materials, displaying availability based on the day of the week, and providing a prioritization system for efficient resource allocation. Additionally, it seeks to automate repeated tasks, further enhancing the convenience and efficiency of managing upgrades. It aims to enhance the gaming experience by offering a convenient tool for players to plan and optimize their upgrade strategies, ultimately saving time and enhancing overall gameplay enjoyment.
+					<p>The motivation behind developing this app was to address the challenge of efficiently managing and tracking the upgrade progress of multiple characters and weapons simultaneously in Genshin Impact. With the game's complex upgrade system requiring different materials and priorities for each character and weapon, it can be overwhelming to keep track of everything manually.
 					</p>
-					<a href="#demo" style="border-bottom: none; "> See Demo
-						<span class="icon solid fa-arrow-right"></span>
-					</a>
+					<p>
+						This app simplifies the process by automating the calculation of required materials, displaying availability based on the day of the week, and providing a prioritization system for efficient resource allocation. Additionally, it seeks to automate repeated tasks, further enhancing the convenience and efficiency of managing upgrades. It aims to enhance the gaming experience by offering a convenient tool for players to plan and optimize their upgrade strategies, ultimately saving time and enhancing overall gameplay enjoyment.
+						<a href="#demo" style="border-bottom: none; "> See Demo
+							<span class="icon solid fa-arrow-right"></span>
+						</a>
 					</p>
 				</section>
 
@@ -80,10 +89,10 @@
 							</div>
 						</article>
 						<article>
-							<span class="icon solid fa-award"></span>
+							<span class="icon solid fa-certificate"></span>
 							<div class="content">
-								<h3>Achievements</h3>
-								<p>Reduces planning time by 90%.</p>
+								<h3>Milestone</h3>
+								<p>Google Sheets Automation and Scripting</p>
 							</div>
 						</article>
 					</div>
@@ -115,13 +124,9 @@
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
-
 			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-			<script>
-				$(function(){
-					$("#contact").load("../contact.html");
-				});
-			</script>
+			<script src="project_page.js"></script>
+
 
 	</body>
 </html>

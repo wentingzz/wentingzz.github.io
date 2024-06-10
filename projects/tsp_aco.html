@@ -12,16 +12,12 @@
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script>
-			$(function(){
-				$("#contact").load("../contact.html");
-			});
-		</script>
+
+
 	</head>
 	<body class="is-preload">
 		<div class="back-link">
-			<a href="javascript:history.go(-1)" style="border-bottom: none; ">
+			<a href="javascript:void(0);" onclick="checkHistory()" style="border-bottom: none; ">
 				<span class="icon solid fa-arrow-left" style="font-size: 24px"></span>
 			</a>
 		</div>
@@ -29,15 +25,20 @@
 			<div id="project">
 				<section id="one">
 					<header class="major">
-						<h2>Ant Colony Optimization to TSP</h2>
+						<h2><a href="#more" class="icon solid fa-award" > Ant Colony Optimization to TSP</a></h2>
 					</header>
 					<p>
 						The Ant Colony Optimization (ACO) algorithm draws inspiration from the collective intelligence of real ants, particularly their use of pheromones for social interactions. ACO is capable of producing near-optimal solutions to the Traveling Salesman Problem (TSP) within a constrained timeframe and finds applications in various combinatorial optimization problems. This study concentrates on assessing the performance of ACO in TSP, focusing on implementation decisions and the impact of different parameters. The research employs the simplest form of TSP, which calculates the Euclidean distance as the cost between cities, as the specific type of TSP is not the primary focus.
 					</p>
 					<p>
 						This project evaluates the effectiveness of Ant Colony Optimization (ACO) in solving the Travelling Salesman Problem (TSP). The implementation is customized based on research findings or extensive testing. The final implementation adopts the Max-Min Ant System due to its ability to provide stable solutions with good performance for TSP. The project aims to investigate the impact of algorithmic parameters on its performance.
+					</p>
+					<p>
 						<a href="#demo" style="border-bottom: none; "> See Pseudocode
 							<span class="icon solid fa-arrow-right"></span>
+						</a> <br/>
+						<a href="https://github.com/wentingzz/Julia_ACO_TSP" style="border-bottom: none; "> See Code
+							<span class="icon brands fa-github"></span> <span class="icon solid fa-arrow-right"></span>
 						</a>
 					</p>
 				</section>
@@ -98,7 +99,7 @@
 
 
 				<section id="demo">
-					<h2>Pseudocode</h2>
+					<h2>Pseudocode <a style="color:#41C9E2" href="https://github.com/wentingzz/Julia_ACO_TSP" class="icon brands fa-github"></a></h2>
 <pre>
 	function ACO(graph, num_ants, num_iterations, alpha, beta, rho, q):
 		Initialize pheromone levels on edges
@@ -151,6 +152,27 @@
 						The experimental group with α=7 demonstrates the best performance. Based on the results of the 20 repeated experiments (e.g., [33548.8, 33600.6, ...]), the confidence level obtained is 99%, with a range of [33558.61813, 33595.33187]. This means that the e value will fall within the range of [1.015032287, 1.016142751] with 99% certainty.
 					</p>
 				</section>
+				<section id="more">
+					<h2>More Details</h2>
+					<div class="features">
+						<article>
+							<i class="icon solid fa-code"></i>
+							<div class="content">
+								<h3>Technology Stack</h3>
+								<p>Languages: Julia, Plots<br/>
+									Software: Jupyter Notebook
+								</p>
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-award"></span>
+							<div class="content">
+								<h3>Achievements</h3>
+								<p>Best Performance in <a href="https://www.csc.ncsu.edu/courses/outcomes.php?uniq_id=44">Independent Research</a></p>
+							</div>
+						</article>
+					</div>
+				</section>
 
 				<section id="four">
 					<div id="contact"></div>
@@ -166,7 +188,9 @@
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
-	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+			<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+			<script src="project_page.js"></script>
 
 	</body>
 </html>

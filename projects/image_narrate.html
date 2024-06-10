@@ -11,17 +11,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script>
-			$(function(){
-				$("#contact").load("../contact.html");
-			});
-		</script>
 	</head>
 	<body class="is-preload">
 		<div class="back-link">
-			<a href="javascript:history.go(-1)" style="border-bottom: none; ">
+			<a href="javascript:void(0);" onclick="checkHistory()" style="border-bottom: none; ">
 				<span class="icon solid fa-arrow-left" style="font-size: 24px"></span>
 			</a>
 		</div>
@@ -29,7 +22,7 @@
 			<div id="project">
 				<section id="one">
 					<header class="major">
-						<h2>Image Narrate</h2>
+						<h2><a href="https://github.com/wentingzz/Image-Narrate/" class="icon brands fa-github"> Image Narrate</a></h2>
 					</header>
 					<p>ImageNarrate opens a gateway to a visually enhanced storytelling experience. By transforming images into captivating narratives, it bridges the gap between visual content and textual context. With ImageNarrate, unleash the full potential of your images, crafting compelling stories that captivate and engage audiences like never before.
 						<a href="#demo" style="border-bottom: none; "> See Demo
@@ -90,8 +83,11 @@
 						<article>
 							<span class="icon solid fa-stamp"></span>
 							<div class="content">
-								<h3>Achievements</h3>
-								<p>IBM AI Developer Professional Certificate</p>
+								<h3>Certificates</h3>
+								<p>
+									<a href="https://www.coursera.org/account/accomplishments/specialization/FM4BA4PQDGS6">IBM AI Developer Professional</a><br/>
+									<a href="https://www.coursera.org/account/accomplishments/specialization/RVKAGXHR8VB2">Generative AI for Software Developers</a>
+								</p>
 							</div>
 						</article>
 					</div>
@@ -119,6 +115,7 @@
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
-
+			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+			<script src="project_page.js"></script>
 	</body>
 </html>

@@ -11,17 +11,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script>
-			$(function(){
-				$("#contact").load("../contact.html");
-			});
-		</script>
 	</head>
 	<body class="is-preload">
 		<div class="back-link">
-			<a href="javascript:history.go(-1)" style="border-bottom: none; ">
+			<a href="javascript:void(0);" onclick="checkHistory()" style="border-bottom: none; ">
 				<span class="icon solid fa-arrow-left" style="font-size: 24px"></span>
 			</a>
 		</div>
@@ -29,10 +22,10 @@
 			<div id="project">
 				<section id="one">
 					<header class="major">
-						<h2>Get My Paper</h2>
+						<h2><a href="https://github.com/wentingzz/GetMyPaper" class="icon brands fa-github"> Get My Paper</a></h2>
 					</header>
 					<p>GetMyPaper is a Python script designed to search for academic papers based on keywords and download the PDF files from various websites, including academic.oup.com, link.springer.com, onlinelibrary.wiley.com, and others. The script retrieves papers matching the search criteria and saves them locally. Each downloaded file contains information such as author names, website/journal name, publication year, and paper title.
-						<a href="#demo" style="border-bottom: none; "> See Screenshots
+						<a href="#demo" style="border-bottom: none; "> See Snapshot
 							<span class="icon solid fa-arrow-right"></span>
 						</a>
 					</p>
@@ -104,7 +97,7 @@
 				</section>
 
 				<section id="demo">
-					<h2>Screenshots</h2>
+					<h2>Snapshot</h2>
 					<div class="features">
 						<article><img class="content" src="../images/fulls/get_my_paper.png" alt="" /></article>
 					</div>
@@ -124,6 +117,7 @@
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
-
+			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+			<script src="project_page.js"></script>
 	</body>
 </html>

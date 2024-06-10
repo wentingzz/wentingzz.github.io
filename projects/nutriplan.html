@@ -11,11 +11,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 	</head>
 	<body class="is-preload">
 		<div class="back-link">
-			<a href="javascript:history.go(-1)" style="border-bottom: none; ">
+			<a href="javascript:void(0);" onclick="checkHistory()" style="border-bottom: none; ">
 				<span class="icon solid fa-arrow-left" style="font-size: 24px"></span>
 			</a>
 		</div>
@@ -24,7 +23,8 @@
 			<div id="project">
 				<section id="one">
 					<header class="major">
-						<h2>NutriPlan</h2>
+						<h2><a href="#more" class="icon solid fa-certificate"> NutriPlan</a></h2>
+						<h2></h2>
 					</header>
 					<p>NutriPlan is designed to address the critical need for improved nutrition and health habits. Research shows that up to 80% of heart disease, stroke, and type 2 diabetes, as well as up to 40% of cancer cases, could be prevented by adopting healthier eating habits, engaging in regular physical activity, and quitting tobacco use. NutriPlan aims to empower users to make these positive lifestyle changes by providing a convenient and effective tool for meal planning and nutrition tracking.
 						<a href="#demo" style="border-bottom: none; "> See Demo
@@ -80,8 +80,8 @@
 						<article>
 							<span class="icon solid fa-certificate"></span>
 							<div class="content">
-								<h3>Achievements</h3>
-								<p>Senior Design @ UCI</p>
+								<h3>Milestone</h3>
+								<p><a href="https://mcs.ics.uci.edu/capstone_project/nutriplan/">Senior Design</a> @ UCI</p>
 							</div>
 						</article>
 					</div>
@@ -89,7 +89,7 @@
 
 				<section id="demo">
 					<h2>Demo</h2>
-					<iframe src="https://www.youtube.com/embed/Yk_upsPN32A" frameborder="0" allowfullscreen></iframe>
+					<iframe src="https://www.youtube.com/embed/Yk_upsPN32A" style="width: 100%; aspect-ratio: 10/4;" frameborder="0" allowfullscreen></iframe>
 				</section>
 
 				<section>
@@ -106,11 +106,7 @@
 			<script src="../assets/js/main.js"></script>
 
 			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-			<script>
-				$(function(){
-					$("#contact").load("../contact.html");
-				});
-			</script>
+			<script src="project_page.js"></script>
 
 	</body>
 </html>
