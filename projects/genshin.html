@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Wenting's Project - Gensihn Impact Planner</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+	</head>
+	<body class="is-preload">
+		<div class="back-link">
+			<a href="javascript:history.go(-1)" style="border-bottom: none; ">
+				<span class="icon solid fa-arrow-left" style="font-size: 24px"></span>
+			</a>
+		</div>
+
+		<!-- Main -->
+			<div id="project">
+				<section id="one">
+					<header class="major">
+						<h2>Genshin Impact Planner</h2>
+					</header>
+					<p>The motivation behind developing this app was to address the challenge of efficiently managing and tracking the upgrade progress of multiple characters and weapons simultaneously in Genshin Impact. With the game's complex upgrade system requiring different materials and priorities for each character and weapon, it can be overwhelming to keep track of everything manually. This app simplifies the process by automating the calculation of required materials, displaying availability based on the day of the week, and providing a prioritization system for efficient resource allocation. Additionally, it seeks to automate repeated tasks, further enhancing the convenience and efficiency of managing upgrades. It aims to enhance the gaming experience by offering a convenient tool for players to plan and optimize their upgrade strategies, ultimately saving time and enhancing overall gameplay enjoyment.
+					</p>
+					<a href="#demo" style="border-bottom: none; "> See Demo
+						<span class="icon solid fa-arrow-right"></span>
+					</a>
+					</p>
+				</section>
+
+				<section id="features">
+					<h2>Key Features</h2>
+					<div class="features">
+						<article>
+							<span class="icon solid fa-clock-rotate-left"></span>
+							<div class="content">
+								<h3>Resource Planning</h3>
+								<p>Automates the calculation and display of materials needed to level up talents for each character and weapon, saving significant planning time.</p>
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-gear"></span>
+							<div class="content">
+								<h3>Priority Setting</h3>
+								<p>Allows users to prioritize materials with H/M/L (High/Medium/Low) for weekly planning.</p>
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-list-check"></span>
+							<div class="content">
+								<h3>Weekly Summary</h3>
+								<p>Generates a summary table indicating which materials to focus on each day of the week.</p>
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-database"></span>
+							<div class="content">
+								<h3>Data Insertion</h3>
+								<p>Provides the ability to new characters, weapons, and their materials in a separate sheet for database updates.</p>
+							</div>
+						</article>
+
+					</div>
+				</section>
+				<section id="more">
+					<h2>More Details</h2>
+					<div class="features">
+						<article>
+							<i class="icon solid fa-code"></i>
+							<div class="content">
+								<h3>Technology Stack</h3>
+								<p>Languages: Google Sheets functions and Google Apps Script.<br/>
+									Data: Genshin Impact Wiki</p>
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-award"></span>
+							<div class="content">
+								<h3>Achievements</h3>
+								<p>Reduces planning time by 90%.</p>
+							</div>
+						</article>
+					</div>
+				</section>
+
+				<section id="demo">
+					<h2>Demo</h2>
+					<video controls>
+						<source src="../images/others/genshin.mp4" type="video/mp4">
+						Your browser does not support the audio element.
+					</video>
+					<p>
+						Users can input character names into the sheet, with the needed materials automatically populated on the right in grey text (as this detail is less important for user interaction). Users only need to focus on entering data in the columns highlighted in black. They can then specify the priority as H/M/L, which will be reflected in the weekly summary, or leave it blank for future planning. The process for managing weapons is identical to managing characters.
+					</p>
+					<p>
+						Users can also add new characters. In the demo, we add a new character called "Test" with needed materials. When we go back to Resource Planner, the information is populated correctly if we enter "Test" and we can do the same just like we did for other characters.
+					</p>
+				</section>
+
+				<section>
+					<div id="contact"></div>
+				</section>
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+			<script>
+				$(function(){
+					$("#contact").load("../contact.html");
+				});
+			</script>
+
+	</body>
+</html>
