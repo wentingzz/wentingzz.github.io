@@ -1,4 +1,10 @@
 {
+    "File Assistant": {
+        "url": "projects/file_assistant.html",
+        "image": "images/fulls/file_assistant.png",
+        "description": "AI-powered file content analysis and question answering chatbot",
+        "icon": "solid fa-stamp"
+    },
     "Audio Summary": {
         "url": "projects/audio_summary.html",
         "image": "images/fulls/audio_summary.png",

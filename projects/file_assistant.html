@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Wenting's Project - File Assistant</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+	</head>
+	<body class="is-preload">
+		<div class="back-link">
+			<a href="javascript:void(0);" onclick="checkHistory()" style="border-bottom: none; ">
+				<span class="icon solid fa-arrow-left" style="font-size: 24px"></span>
+			</a>
+		</div>
+		<!-- Main -->
+			<div id="project">
+				<section id="one">
+					<header class="major">
+						<h2><a href="https://github.com/wentingzz/File-Assistant/" class="icon brands fa-github"> File Assistant</a></h2>
+					</header>
+					<p>File Assistant is an AI application designed for conversational question-answering based on uploaded documents. The goal is to analyze and extract valuable information from a variety of file types, including PDFs, Word documents, text files, and presentations. Leveraging advanced natural language processing (NLP) algorithms, File Assistant can understand the content within these files and provide users with meaningful insights. Its intuitive interface allows users to easily upload files and interact with the AI to gain a deeper understanding of their documents.
+					</p>
+					<p>
+						The motivation behind File Assistant stems from the increasing complexity of document analysis in today's digital landscape. With the exponential growth of digital content, users are faced with the challenging task of extracting relevant information from a vast amount of data. File Assistant aims to simplify this process by automating document analysis tasks using AI. By offering a tool that can analyze and extract insights from files, File Assistant empowers users to make informed decisions and derive actionable insights from their documents.
+						<a href="#demo" style="border-bottom: none; "> See Demo
+							<span class="icon solid fa-arrow-right"></span>
+						</a>
+					</p>
+				</section>
+
+				<section id="features">
+					<h2>Key Features</h2>
+					<div class="features">
+						<article>
+							<span class="icon regular fa-file"></span>
+							<div class="content">
+								<h3>Document Analysis</h3>
+								<p>Supports various document formats (PDF, DOC, DOCX, TXT) and splits documents into text chunks for efficient processing.</p>
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-comments"></span>
+							<div class="content">
+								<h3>Question-Answering Chain</h3>
+								<p>Offers a conversational interface to inquire about document content. This is achieved through the integration of the Language Model (LLM) and the embeddings database.</p>
+								<!--The application builds a Question-Answering (QA) chain, incorporating both a Language Model (LLM) and a retriever. The LLM, powered by WatsonxLLM, generates responses based on user queries and conversation history. The retriever, based on the Chroma embeddings database, helps in retrieving relevant information for answering questions.-->
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-lightbulb"></span>
+							<div class="content">
+								<h3>LLM Integration</h3>
+								<p>Utilizes the LLAMA2_model from IBM WatsonX to generate responses using user queries and conversation history.</p>
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-database"></span>
+							<div class="content">
+								<h3>Embeddings Database</h3>
+								<p>Creates an embeddings database using Chroma for representing text data, enabling efficient retrieval of information from documents.</p>
+							</div>
+						</article>
+
+						<article>
+							<span class="icon solid fa-file-zipper"></span>
+							<div class="content">
+								<h3>Context Management</h3>
+								<p>Maintains conversation history to retain context and provide personalized responses over time.</p>
+							</div>
+						</article>
+
+					</div>
+				</section>
+
+				<section id="more">
+					<h2>More Details</h2>
+					<div class="features">
+						<article>
+							<i class="icon solid fa-code"></i>
+							<div class="content">
+								<h3>Technology Stack</h3>
+								<p>Languages: Python, Flask, HTML, Javascript<br/>
+									Libraries: Langchain (RetrievalQA, RecursiveCharacterTextSplitter, Chroma, document_loaders), IBM Watson Machine Learning (WatsonxLLM, Model)
+								</p>
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-stamp"></span>
+							<div class="content">
+								<h3>Certificates</h3>
+								<p>
+									<a href="https://www.coursera.org/account/accomplishments/specialization/FM4BA4PQDGS6">IBM AI Developer Professional</a><br/>
+									<a href="https://www.coursera.org/account/accomplishments/specialization/RVKAGXHR8VB2">Generative AI for Software Developers</a>
+								</p>
+							</div>
+						</article>
+					</div>
+				</section>
+
+				<section id="demo">
+					<h2>Demo
+						<a href="https://github.com/wentingzz/File-Assistant/" class="icon brands fa-github"></a>
+					</h2>
+					<video controls>
+						<source src="../images/others/file_assistant.mp4" type="video/mp4">
+						Your browser does not support the audio element.
+					</video>
+				</section>
+
+				<section id="four">
+					<div id="contact"></div>
+				</section>
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+			<script src="project_page.js"></script>
+	</body>
+</html>
