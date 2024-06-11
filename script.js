@@ -23,3 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Error fetching project data:', error));
 });
+
+function navChange() {
+	if(document.getElementById("mySidenav").style.width == "200px"){
+		document.getElementById("mySidenav").style.width = "0";
+	} else {
+		document.getElementById("mySidenav").style.width = "200px";
+	}
+}
