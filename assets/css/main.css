@@ -3427,3 +3427,50 @@ input, select, textarea {
 			}
 
 	}
+
+	.experience-item {
+	    transition: filter 0.3s;
+	    margin-left: -0.5em;
+	    padding: 0.5em;
+	    display: block;
+        width: 100%;
+	}
+	.experience-item a {
+	    color: #a2a2a2;
+	}
+
+	.experience-item .two-column {
+	    display: flex;
+	    justify-content: space-between;
+	}
+	.experience-item p {
+	    margin: 0 0 0 0;
+	    text-align: right;
+	    font-size: 0.95em;
+	}
+	.experience-item h3 {
+	    margin: 0 0 0.2em 0;
+	}
+
+	/* Style for hovered experience */
+	.experience-item:hover {
+	    box-shadow:  0 4px 8px rgba(0, 0, 0, 0.1); /* Transparent shadow */
+	}
+	.experience-item:hover h3 {
+	    color: #41C9E2;
+	}
+
+	.skill-tag {
+	    display: inline-block;
+	    border-color: color: #41C9E2;
+	    background-color: #eee;
+	    color: #111;
+	    font-size: 0.8em;
+	    padding: 0.2em 0.5em;
+	    margin-right: 0.5em;
+	    margin-bottom: 0.2em;
+	    border-radius: 12px;
+	    min-width:30px;
+	    text-align:center;
+	    border-bottom: none;
+	}

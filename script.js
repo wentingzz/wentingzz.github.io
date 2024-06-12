@@ -17,11 +17,39 @@ document.addEventListener('DOMContentLoaded', function() {
                         </a>
                         <h3>${iconHTML} ${projectName}</h3>
                         <p>${project.description}</p>
+                        <p>${project.skills && project.skills.length > 0 ? `<span>${project.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}</span>` : ''}</p>
+
                     `;
                 }
             });
         })
         .catch(error => console.error('Error fetching project data:', error));
+
+    fetch('projects/experience.json')
+        .then(response => response.json())
+        .then(data => {
+            const experiences = document.querySelectorAll('.experience-item');
+            experiences.forEach(experience => {
+                const experienceName = experience.getAttribute('data-experience');
+                const exp = data[experienceName];
+
+                if (exp) {
+                    experience.innerHTML = `
+                        <a href="${exp.url}">
+                            <div class="two-column">
+						        <h4>${experienceName} <span class="icon solid fa-link"></span></h4>
+						        <p>${exp.duration}</p>
+						    </div>
+					        <div class="two-column">
+						        <span>${exp.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}</span>
+						        <p>${exp.company}</p>
+						    </div>
+					    </a>
+                    `;
+                }
+            });
+        })
+        .catch(error => console.error('Error fetching experience data:', error));
 });
 
 function navChange() {
