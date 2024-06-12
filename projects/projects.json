@@ -2,7 +2,7 @@
     "File Assistant": {
         "url": "projects/file_assistant.html",
         "image": "images/fulls/file_assistant.png",
-        "description": "AI-powered file content analysis and question answering chatbot",
+        "description": "AI-based chatbot for file content analysis and question answering",
         "icon": "solid fa-stamp"
     },
     "Audio Summary": {

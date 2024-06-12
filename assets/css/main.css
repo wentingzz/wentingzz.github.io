@@ -117,7 +117,7 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #41C9E2 !important;
+			color: #41C9E2;
 			text-decoration: none;
 		}
 
@@ -131,7 +131,7 @@ input, select, textarea {
 	}
 
 	p {
-		margin: 0 0 2em 0;
+		margin: 0 0 1em 0;
 		font-size: 1.1em;
 	}
 
@@ -2564,12 +2564,12 @@ input, select, textarea {
 		}
 
 		.work-item h3 {
-			font-size: 1em;
+			font-size: 1.1em;
 			margin: 0 0 0.5em 0;
 		}
 
 		.work-item p {
-			font-size: 0.8em;
+			font-size: 0.95em;
 			line-height: 1.5em;
 			margin: 0;
 		}
@@ -3364,17 +3364,17 @@ input, select, textarea {
 
 	}
 	.openbtn {
-        font-size: 24px;
-        cursor: pointer;
-        position: fixed;
-        top: 30px;
-        left: 20px;
-        z-index: 1000;
-        color: white;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-    }
+	    font-size: 24px;
+	    cursor: pointer;
+	    position: fixed;
+	    top: 30px;
+	    left: 20px;
+	    z-index: 1000;
+	    color: #aaa;
+	    padding: 10px;
+	    border: none;
+	    border-radius: 5px;
+	}
     .sidenav {
             height: 100%;
             width: 0;
@@ -3391,14 +3391,15 @@ input, select, textarea {
         .sidenav a {
             padding: 8px 8px 8px 32px;
             text-decoration: none;
+            border-bottom: none;
             font-size: 25px;
-            color: #818181;
+            color: #aaa;
             display: block;
             transition: 0.3s;
         }
 
         .sidenav a:hover {
-            color: #f1f1f1;
+            color: white ;
         }
 
 /* XSmall */
