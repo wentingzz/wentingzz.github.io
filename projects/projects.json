@@ -1,34 +1,34 @@
 {
     "File Assistant": {
-        "url": "projects/file_assistant.html",
+        "url": "projects/project.html?project=file_assistant",
         "image": "images/fulls/file_assistant.png",
         "description": "AI-based chatbot for file content analysis and question answering",
         "skills": ["Chatbot","Langchain","Embedding", "Context", "Python", "Flask"],
         "icon": "solid fa-stamp"
     },
     "Audio Summary": {
-        "url": "projects/audio_summary.html",
+        "url": "projects/project.html?project=audio_summary",
         "image": "images/fulls/audio_summary.png",
         "description": "AI-enhanced audio summarization",
         "skills": ["Speech-to-text", "Transformers", "Prompt template", "Generative AI", "Llama"],
         "icon": "solid fa-stamp"
     },
     "Image Narrate": {
-        "url": "projects/image_narrate.html",
+        "url": "projects/project.html?project=image_narrate",
         "image": "images/fulls/image_caption.png",
         "description": "AI-powered image caption generator",
         "skills": ["Image-to-text", "Transformers", "Generative AI", "numpy", "PIL"],
         "icon": "solid fa-stamp"
     },
     "MMTrip": {
-        "url": "projects/mmtrip.html",
+        "url": "projects/project.html?project=mmtrip",
         "image": "images/fulls/mmtrip.jfif",
         "description": "Personalized trip planner web application",
         "skills": ["Python", "React", "Django", "CSS", "AWS", "Machine Learning", "REST APIs", "Google Map APIs", "SerpAPI", "OpenStreet", "Directions", "Overpass"],
         "icon": "solid fa-award"
     },
     "NutriPlan": {
-        "url": "projects/nutriplan.html",
+        "url": "projects/project.html?project=nutriplan",
         "image": "images/fulls/nutriplan.png",
         "skills": ["Dart", "FlutterFlow", "FireBase", "NoSQL", "REST APIs"],
         "description": "Personalized meal planning and nutrition tracking app"
@@ -40,7 +40,7 @@
         "description": "Log processing and analysis tool for TB-scale data"
     },
     "iTrust2": {
-        "url": "projects/itrust2.html",
+        "url": "projects/project.html?project=itrust2",
         "image": "images/fulls/itrust2.jpg",
         "skills": ["Java", "AngularJS", "Javascript", "HTML", "CSS", "MySQL", "Spring", "JUnit", "Cucumber", "Selenium","Jenkins"],
         "description": "Web-based electronic health records system"
@@ -72,20 +72,20 @@
         "description": "An algorithm that explores the search space by dividing it into smaller subspaces and selectively exploring only those with potential optimal solutions, using depth-first search."
     },
     "Time Manager": {
-        "url": "projects/time_manager.html",
+        "url": "projects/project.html?project=time_manager",
         "image": "images/fulls/calendar.png",
         "description": "Machine learning-powered calendar scheduler",
         "skills": ["Python", "scikit-learn", "Google Calendar API", "numpy", "pandas"],
         "icon": "solid fa-award"
     },
     "Get My Paper": {
-        "url": "projects/get_my_paper.html",
+        "url": "projects/project.html?project=get_my_paper",
         "image": "images/fulls/get_my_paper.jfif",
         "skills": ["Python", "BeautifulSoup", "request"],
         "description": "Web scraper to download papers"
     },
     "Genshin Planner": {
-        "url": "projects/genshin.html",
+        "url": "projects/project.html?project=genshin",
         "image": "images/fulls/genshin_cover.jfif",
         "skills": ["Excel", "Javascript"],
         "description": "Game resource weekly planner"

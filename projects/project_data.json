@@ -1,0 +1,422 @@
+{
+    "get_my_paper": {
+        "name": "Get My Paper",
+        "icon": "icon brands fa-github",
+        "icon_link": "https://github.com/wentingzz/GetMyPaper",
+        "description": "GetMyPaper is a Python script designed to search for academic papers based on keywords and download the PDF files from various websites, including academic.oup.com, link.springer.com, onlinelibrary.wiley.com, and others. The script retrieves papers matching the search criteria and saves them locally. Each downloaded file contains information such as author names, website/journal name, publication year, and paper title.",
+        "demo": "#demo",
+        "demo_text": "Snapshot",
+        "features": [
+            {
+                "icon": "icon solid fa-magnifying-glass",
+                "title": "Keyword Search",
+                "description": "Enables users to input keywords for their search, which the script uses to search across multiple websites simultaneously."
+            },
+            {
+                "icon": "icon solid fa-layer-group",
+                "title": "Website Selection",
+                "description": "Allows users to choose the specific websites they want to search for papers, offering flexibility and customization."
+            },
+            {
+                "icon": "icon solid fa-file-pdf",
+                "title": "PDF Download",
+                "description": "Downloads PDF files from the selected websites, starting from specified pages of the search results. Users can choose to download additional files as needed."
+            },
+            {
+                "icon": "icon regular fa-folder",
+                "title": "File Structure",
+                "description": "Organizes downloaded PDF files with metadata such as author names, website/journal name, publication year, and paper title. This structured approach simplifies the management and referencing of downloaded papers."
+            }
+        ],
+        "technology_stack": [
+            "Python, BeautifulSoup, requests"
+        ],
+        "more_tech": {
+            "icon": "icon solid fa-sitemap",
+            "title": "Websites",
+            "description": [
+                {
+                    "text":"Journal of Consumer Research (JCR)\nJournal of Consumer Psychology (JCP)\nJournal of Marketing (JM)\nJournal of Marketing Research (JMR)\nJournal of Public Policy & Marketing (JPPM)\nMarketing Science (MKS)\nManagement Science (MGS)\nPsychology & Marketing (PM)\nJournal of the Academy of Marketing Science (JAMS)"
+                }
+            ]
+
+        },
+        "demo_img": "../images/fulls/get_my_paper.png"
+
+    },
+    "itrust2": {
+        "name": "iTrust2",
+        "icon": "icon brands fa-github",
+        "icon_link": "https://github.com/wentingzz/csc326-GP",
+        "description": "iTrust2 originated as a project for the CSC326 Software Engineering course in the Computer Science Department at NC State University. It is primarily maintained by Kai Presler-Marshall and Sarah Heckman. The goal of iTrust2 is to immerse students in software engineering practices through a substantial, relevant, and evolving application that incorporates security and privacy requirements. If you're interested in using iTrust2 for your software engineering course, please don't hesitate to get in touch with us.\n\niTrust2 is an electronic health records system (EHR) designed to empower patients to manage their health records and communicate with their healthcare providers (HCPs). Healthcare providers can use iTrust2 to document office visits, including basic health metrics, diagnoses, prescriptions, eye care, and pregnancy care. iTrust2 adheres to HIPAA regulations to ensure the security and privacy of patient records.",
+        "demo": "#demo",
+        "demo_text": "Snapshot",
+        "features": [
+            {
+              "icon": "icon solid fa-prescription-bottle-medical",
+              "title": "Prescriptions",
+              "description": "Allows healthcare providers to manage prescriptions for patients, including creating, updating, and tracking prescriptions."
+            },
+            {
+              "icon": "icon solid fa-stethoscope",
+              "title": "Diagnoses",
+              "description": "Records and manages diagnoses for patients, helping to keep track of their medical conditions and treatment plans."
+            },
+            {
+              "icon": "icon solid fa-unlock-keyhole",
+              "title": "Password Functionality",
+              "description": "Enhances the security of the system by enabling users to change their passwords and ensuring that passwords meet security requirements."
+            },
+            {
+              "icon": "icon solid fa-id-card",
+              "title": "Edit Demographics",
+              "description": "Update patient demographics, ensuring that the information in the system is accurate and up to date."
+            }
+        ],
+        "technology_stack": [
+            "Backend: Java EE, REST API\nFrontend: AngularJS, Javascript, HTML, CSS\nDatabase: MySQL/MariaDB\nTesting: Spring, JUnit, Cucumber & Selenium\nDeployment: Jenkins"
+        ],
+        "more_tech": {
+            "icon": "icon solid fa-certificate",
+            "title": "Milestone",
+            "description": [
+                {
+                    "text":"1st Full-Stack Project"
+                }
+            ]
+
+        },
+        "demo_img": "../images/fulls/itrust2.jpg"
+
+    },
+    "genshin": {
+        "name": "Genshin Impact Planner",
+        "icon": "icon solid fa-code",
+        "icon_link": "https://docs.google.com/spreadsheets/d/198UmS68BDU2c2Uj2WKFhDkvU0QyBQ2Tl4TohJqJC-8g/edit?gid=888672804#gid=888672804",
+        "description": "The motivation behind developing this app was to address the challenge of efficiently managing and tracking the upgrade progress of multiple characters and weapons simultaneously in Genshin Impact. With the game's complex upgrade system requiring different materials and priorities for each character and weapon, it can be overwhelming to keep track of everything manually.\n\nThis app simplifies the process by automating the calculation of required materials, displaying availability based on the day of the week, and providing a prioritization system for efficient resource allocation. Additionally, it seeks to automate repeated tasks, further enhancing the convenience and efficiency of managing upgrades. It aims to enhance the gaming experience by offering a convenient tool for players to plan and optimize their upgrade strategies, ultimately saving time and enhancing overall gameplay enjoyment.",
+        "demo": "#demo",
+        "demo_text": "Demo",
+        "features": [
+            {
+              "icon": "icon solid fa-clock-rotate-left",
+              "title": "Resource Planning",
+              "description": "Automates the calculation and display of materials needed to level up talents for each character and weapon, saving significant planning time."
+            },
+            {
+              "icon": "icon solid fa-gear",
+              "title": "Priority Setting",
+              "description": "Allows users to prioritize materials with H/M/L (High/Medium/Low) for weekly planning."
+            },
+            {
+              "icon": "icon solid fa-list-check",
+              "title": "Weekly Summary",
+              "description": "Generates a summary table indicating which materials to focus on each day of the week."
+            },
+            {
+              "icon": "icon solid fa-database",
+              "title": "Data Insertion",
+              "description": "Provides the ability to add new characters, weapons, and their materials in a separate sheet for database updates."
+            }
+        ],
+        "technology_stack": [
+            "Languages: Google Sheets functions and Google Apps Script.\nData: Genshin Impact Wiki"
+        ],
+        "more_tech": {
+            "icon": "icon solid fa-certificate",
+            "title": "Milestone",
+            "description": [
+                {
+                    "text":"Google Sheets Automation and Scripting"
+                }
+            ]
+
+        },
+        "demo_mp4": "../images/others/genshin.mp4",
+        "demo_details": "Users can input character names into the sheet, with the needed materials automatically populated on the right in grey text (as this detail is less important for user interaction). Users only need to focus on entering data in the columns highlighted in black. Users can then specify the priority as H/M/L, or leave it blank for future planning. The process for managing weapons is identical to managing characters. For materials that can only be gained on specific days of the week, we provide the weekly summary table. To track materials that can be obtained throughout the week, panels of grouped rows are provided, such as ascension materials from bosses and talent materials from weekly bosses.\n\nUsers have the ability to add new characters to the sheet. For instance, in the demo, we add a character named \"Test\" along with the required materials. Upon returning to the Resource Planner, the information is correctly populated if \"Test\" is entered, enabling users to manage this new character similarly to existing ones. The spreadsheet also supports weapon addition, which is not demonstrated in the video."
+
+    },
+    "audio_summary": {
+        "name": "Audio Summary",
+        "icon": "icon brands fa-github",
+        "icon_link": "https://github.com/wentingzz/Audio-Summary/",
+        "description": "AudioSummary empowers users to unlock the essence of spoken content effortlessly. Transforming lengthy audio files into concise, informative summaries, it saves time and enhances productivity. With AudioSummary, dive deeper into the world of audio content, uncovering key insights with ease.",
+        "demo": "#demo",
+        "demo_text": "Demo",
+        "features": [
+            {
+                "icon": "icon solid fa-circle-play",
+                "title": "Speech-to-Text",
+                "description": "Utilizes the Hugging Face Transformers library for speech recognition, converting audio content from uploaded files or URLs into text."
+            },
+            {
+                "icon": "icon solid fa-file",
+                "title": "Prompt Template",
+                "description": "Chains together language models (LLAMA-2 model) with prompt templates to facilitate the summarization process, allowing for more coherent and accurate summaries."
+            },
+            {
+                "icon": "icon solid fa-list-ul",
+                "title": "LLM-Powered Summarization",
+                "description": "Utilizes the LLAMA-2 model for advanced language model-based summarization."
+            },
+            {
+                "icon": "icon regular fa-folder",
+                "title": "Audio File Management",
+                "description": "Manages audio files for processing, including downloading and deleting temporary files."
+            }
+        ],
+        "technology_stack": [
+            "Languages: Python, Gradio\nLibraries: Langchain, Hugging Face Transformers, IBM Watson, IBM WatsonxLLM Extension, Llama"
+        ],
+        "more_tech": {
+            "icon": "icon solid fa-stamp",
+            "title": "Certificates",
+            "description": [
+                {
+                    "link": "https://www.coursera.org/account/accomplishments/specialization/FM4BA4PQDGS6",
+                    "text" : "IBM AI Developer Professional"
+                },
+                {
+                    "link": "https://www.coursera.org/account/accomplishments/specialization/RVKAGXHR8VB2",
+                    "text" : "Generative AI for Software Developers"
+                }
+            ]
+
+        },
+        "github_link" : "https://github.com/wentingzz/Audio-Summary/",
+        "demo_mp4": "../images/others/audio_summary.mp4"
+    },
+    "file_assistant": {
+        "name": "File Assistant",
+        "icon": "icon brands fa-github",
+        "icon_link": "https://github.com/wentingzz/File-Assistant/",
+        "description": "File Assistant is an AI application designed for conversational question-answering based on uploaded documents. The goal is to analyze and extract valuable information from a variety of file types, including PDFs, Word documents, text files, and presentations. Leveraging advanced natural language processing (NLP) algorithms, File Assistant can understand the content within these files and provide users with meaningful insights. Its intuitive interface allows users to easily upload files and interact with the AI to gain a deeper understanding of their documents.\n\nThe motivation behind File Assistant stems from the increasing complexity of document analysis in today's digital landscape. With the exponential growth of digital content, users are faced with the challenging task of extracting relevant information from a vast amount of data. File Assistant aims to simplify this process by automating document analysis tasks using AI. By offering a tool that can analyze and extract insights from files, File Assistant empowers users to make informed decisions and derive actionable insights from their documents.",
+        "demo": "#demo",
+        "demo_text": "Demo",
+        "features": [
+            {
+              "icon": "icon regular fa-file",
+              "title": "Document Analysis",
+              "description": "Supports various document formats (PDF, DOC, DOCX, TXT) and splits documents into text chunks for efficient processing."
+            },
+            {
+              "icon": "icon solid fa-comments",
+              "title": "Question-Answering Chain",
+              "description": "Offers a conversational interface to inquire about document content. This is achieved through the integration of the Language Model (LLM) and the embeddings database."
+            },
+            {
+              "icon": "icon solid fa-lightbulb",
+              "title": "LLM Integration",
+              "description": "Utilizes the LLAMA2_model from IBM WatsonX to generate responses using user queries and conversation history."
+            },
+            {
+              "icon": "icon solid fa-database",
+              "title": "Embeddings Database",
+              "description": "Creates an embeddings database using Chroma for representing text data, enabling efficient retrieval of information from documents."
+            },
+            {
+              "icon": "icon solid fa-file-zipper",
+              "title": "Context Management",
+              "description": "Maintains conversation history to retain context and provide personalized responses over time."
+            }
+        ],
+        "technology_stack": [
+            "Languages: Python, Flask, HTML, Javascript\nLibraries: Langchain (RetrievalQA, RecursiveCharacterTextSplitter, Chroma, document_loaders), IBM Watson Machine Learning (WatsonxLLM, Model)"
+        ],
+        "more_tech": {
+            "icon": "icon solid fa-stamp",
+            "title": "Certificates",
+            "description": [
+                {
+                    "link": "https://www.coursera.org/account/accomplishments/specialization/FM4BA4PQDGS6",
+                    "text" : "IBM AI Developer Professional"
+                },
+                {
+                    "link": "https://www.coursera.org/account/accomplishments/specialization/RVKAGXHR8VB2",
+                    "text" : "Generative AI for Software Developers"
+                }
+            ]
+
+        },
+        "github_link" : "https://github.com/wentingzz/File-Assistant/",
+        "demo_mp4": "../images/others/file_assistant.mp4"
+    },
+    "image_narrate": {
+        "name": "Image Narrate",
+        "icon": "icon brands fa-github",
+        "icon_link": "https://github.com/wentingzz/Image-Narrate/",
+        "description": "The Image Captioning Web App is a powerful tool that utilizes state-of-the-art AI technology to generate descriptive captions for images. Powered by the \"Salesforce/blip-image-captioning-base\" model from the Hugging Face Transformers library, this web app provides users with a seamless and intuitive way to add textual context to their images.",
+        "demo": "#demo",
+        "demo_text": "Demo",
+        "features": [
+            {
+              "icon": "icon solid fa-circle-play",
+              "title": "AI-Powered Caption Generation",
+              "description": "Leverages advanced deep learning models to analyze uploaded images and generate descriptive captions automatically."
+            },
+            {
+              "icon": "icon solid fa-file",
+              "title": "Image Upload",
+              "description": "Provides intuitive interface to upload images and view the generated captions."
+            }
+        ],
+        "technology_stack": [
+            "Languages: Python, Gradio\nLibraries: Hugging Face Transformers, BlipForConditionalGeneration, NumPy, PIL"
+        ],
+        "more_tech": {
+            "icon": "icon solid fa-stamp",
+            "title": "Certificates",
+            "description": [
+                {
+                    "link": "https://www.coursera.org/account/accomplishments/specialization/FM4BA4PQDGS6",
+                    "text" : "IBM AI Developer Professional"
+                },
+                {
+                    "link": "https://www.coursera.org/account/accomplishments/specialization/RVKAGXHR8VB2",
+                    "text" : "Generative AI for Software Developers"
+                }
+            ]
+
+        },
+        "github_link" : "https://github.com/wentingzz/Image-Narrate/",
+        "demo_mp4": "../images/others/image_caption.mp4"
+    },
+    "nutriplan": {
+        "name": "NutriPlan",
+        "icon": "icon solid fa-certificate",
+        "icon_link": "#more",
+        "description": "NutriPlan is designed to address the critical need for improved nutrition and health habits. Research shows that up to 80% of heart disease, stroke, and type 2 diabetes, as well as up to 40% of cancer cases, could be prevented by adopting healthier eating habits, engaging in regular physical activity, and quitting tobacco use. NutriPlan aims to empower users to make these positive lifestyle changes by providing a convenient and effective tool for meal planning and nutrition tracking.",
+        "demo": "#demo",
+        "demo_text": "Demo",
+        "features": [
+            {
+              "icon": "icon solid fa-carrot",
+              "title": "Recipe Recommendations",
+              "description": "Provides users with healthy recipe suggestions to inspire and diversify their meal choices while aligning with their dietary preferences and restrictions."
+            },
+            {
+              "icon": "icon solid fa-bars-progress",
+              "title": "Progress Tracking",
+              "description": "Enables users to monitor their progress towards their fitness & nutrition goals, including weight management and overall health improvement."
+            },
+            {
+              "icon": "icon solid fa-user",
+              "title": "User Profile & Preferences",
+              "description": "Generates customized meal plans based on individual health goals, nutritional needs, and allergen restrictions."
+            },
+            {
+              "icon": "icon solid fa-lemon",
+              "title": "Food Database",
+              "description": "Provides informed calorie and nutrition information to make educated meal choices."
+            }
+        ],
+        "technology_stack": [
+            "Dart, FlutterFlow, FireBase"
+        ],
+        "more_tech": {
+            "icon": "icon solid fa-certificate",
+            "title": "Milestone",
+            "description": [
+                {
+                    "link": "https://mcs.ics.uci.edu/capstone_project/nutriplan/",
+                    "text" : "Senior Design @ UC Irvine"
+                }
+            ]
+
+        },
+        "youtube_url": "https://www.youtube.com/embed/Yk_upsPN32A"
+    },
+    "time_manager": {
+        "name": "Time Manager",
+        "icon": "icon solid fa-award",
+        "icon_link": "#more",
+        "description": "The Time Manager App is designed to optimize your daily schedule by predicting the time required to complete various tasks and fitting them into your calendar. Leveraging machine learning, this app processes data from three key files—Tasks_Training.xlsx, Events_test.txt, and Tasks_test.xlsx—to train a model that accurately estimates task durations and schedules them efficiently. Additionally, the app seamlessly integrates with Google Calendar to automatically create events for your tasks.",
+        "demo": "#demo",
+        "demo_text": "Demo",
+        "code": "https://github.com/wentingzz/TimeManager",
+        "features": [
+            {
+              "icon": "icon solid fa-lightbulb",
+              "title": "Model Training & Prediction",
+              "description": "Trains a machine learning model using the data from Tasks_Training.xlsx to predict the time required for tasks listed in Tasks_test.xlsx."
+            },
+            {
+              "icon": "icon solid fa-clock",
+              "title": "User Preferences",
+              "description": "Prompts the user to input their preferred working hours, aiming to schedule tasks within these time blocks."
+            },
+            {
+              "icon": "icon solid fa-list-check",
+              "title": "Task Scheduling",
+              "description": "Fits the tasks into the user's preferred working hours while meeting the specified deadlines. It ensures that there are no conflicts with events already scheduled in the calendar."
+            },
+            {
+              "icon": "icon regular fa-calendar-days",
+              "title": "Google Calendar Integration",
+              "description": "Connects to Google Calendar to automatically create events for the scheduled tasks. This feature ensures that all tasks are seamlessly integrated into the user's existing calendar, enhancing organization and productivity."
+            }
+        ],
+        "technology_stack": [
+            "Tech: Python, Sklearn\nData: Tasks_Training.xlsx, Events_test.txt, Tasks_test.xlsx"
+        ],
+        "more_tech": {
+            "icon": "icon solid fa-award",
+            "title": "Achievements",
+            "description": [
+                {
+                    "link": "https://devpost.com/software/time-manager-your-virtual-personal-assistant",
+                    "text" : "Best Overall Award of 2019 DiamondHacks"
+                }
+            ]
+
+        },
+        "github_link" : "https://github.com/wentingzz/TimeManager",
+        "demo_mp4": "../images/others/time_manager.mp4",
+        "demo_details": "In this demo, the app aims to efficiently manage tasks and events within a user's schedule. On the left side of the screen, users can view their input files, which include existing events and tasks to complete. On the right side, the app dynamically organizes these tasks to fit into the user's preferred working hours while respecting specified deadlines and avoiding conflicts with existing events. If certain tasks cannot be accommodated within the preferred working hours, the app notifies the user with a warning message advising them to use their leisure time for these tasks.\n\nThe app also integrates with Google Calendar, allowing users to see the scheduled tasks added to their calendar. Users can choose to hide these tasks by unselecting the \"Time Manager Suggested\" calendar. Additionally, by connecting their Google Calendar to the app, users can enable automatic creation of events for the scheduled tasks, ensuring that only tasks that fit into their preferred working time are added to the calendar."
+    },
+    "mmtrip": {
+        "name": "MMTrip",
+        "icon": "icon solid fa-award",
+        "icon_link": "#more",
+        "description": "The motivation behind MMTrip stems from the increasing complexity of urban transportation systems and the growing demand for efficient and integrated mobility solutions. With the expansion of urbanization, there has been a rise in the variety of transportation modes available, ranging from public transport to ride-sharing services and cycling options. However, this diversity also complicates the process of trip planning, requiring individuals to navigate through multiple options and considerations to find the optimal route.\n\nMMTrip aims to address these challenges by providing a comprehensive and user-friendly solution for multi-modal trip planning. By integrating various modes of transportation, including flights, public transport, driving, walking, and biking, MMTrip offers users a holistic view of their travel options. The ability to personalize trips based on preferences such as time, cost, and comfort, as well as constraints like maximum walking distance, further enhances the user experience.\n\nAdditionally, MMTrip leverages machine learning-powered algorithms for accurate prediction of trip costs and real-time updates on route availability. This not only simplifies the trip planning process but also ensures that users are equipped with the most up-to-date information for their journey.\n\nIn summary, MMTrip is motivated by the need for a comprehensive, integrated, and user-centric approach to trip planning in urban environments. By offering a seamless and personalized experience, MMTrip aims to make multi-modal travel more accessible, efficient, and enjoyable for users.",
+        "demo": "#demo",
+        "demo_text": "Demo",
+        "features": [
+            {
+              "icon": "icon solid fa-route",
+              "title": "Multi-Modal Routing",
+              "description": "One-click access to door-to-door routes considering combinations of flights, public transit, driving, biking, and walking."
+            },
+            {
+              "icon": "icon solid fa-paper-plane",
+              "title": "Trip Personalization",
+              "description": "Personalize your trip by choosing the number of travelers and luggage, mode of transportation, constraints, and preference options."
+            },
+            {
+              "icon": "icon solid fa-location-dot",
+              "title": "Interactive Visualization",
+              "description": "Provides comprehensive trip details such as Uber fare forecasts, direct booking links, and points of interest (POI) lookup on the map."
+            },
+            {
+              "icon": "icon solid fa-chart-line",
+              "title": "Cost Prediction",
+              "description": "Utilizes a machine learning-powered fare prediction model for estimating future prices, as Uber and Lyft only offer real-time quoting systems."
+            }
+        ],
+        "technology_stack": [
+            "Languages: Python, Django, React, AWS\nData: Uber Fare, Historical Uber Rides, World's Airports\nAPIs: Google Maps, Directions, SerpAPI, OpenStreetMap, Overpass"
+        ],
+        "more_tech": {
+            "icon": "icon solid fa-award",
+            "title": "Achievements",
+            "description": [
+                {
+                    "link": "https://www.iise.org/Details.aspx?id=33697",
+                    "text" : "1st Place of IISE-CIS Mobile App Competition"
+                }
+            ]
+
+        },
+        "demo_mp4": "../images/others/mmtrip_demo.mp4",
+        "demo_details": "From the home page, users can input their trip details, including travel locations, dates, number of bags, passengers, and preferred transportation modes. They can opt to have MMtrip select flights for them, which then directs them to the routes page. Here, a similar search bar is available with additional filtering options to refine the displayed routes in a table format. Each row represents a route option and displays details such as departure and arrival times, duration, route specifics, cost, and a booking link.\n\nClicking on a specific route row will display the route on a map. Icons within the route details cell become clickable, allowing users to zoom in to view nodes and edges. Hovering over different edges reveals more details such as travel time, transportation mode, duration, cost, bus lines, and number of stops. Clicking on a node displays the node's address, arrival/departure times, and options to view points of interest (POIs).\n\nUsers also have the option to select their own flights. On the Flight Selection page, various filtering options are provided, including airports, number of stops, airlines, price, times, duration, and flight class. The available flights are displayed in a table showing airline, time, airports, duration, stops, carbon dioxide emissions, and price. Clicking on a flight provides more detailed information, such as layover times and flight numbers. After selecting their preferred flight(s), users can click continue, and MMtrip will generate routes based on their selections.\n\nOnce users are satisfied with their chosen route, they can click on the booking link to proceed with flight booking, with MMtrip attempting to pre-fill the necessary information."
+    }
+}
