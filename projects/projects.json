@@ -6,18 +6,25 @@
         "skills": ["Chatbot","Langchain","Embedding", "Context", "Python", "Flask"],
         "icon": "solid fa-stamp"
     },
+    "Career Advisor": {
+        "url": "projects/project.html?project=career_advisor",
+        "image": "images/fulls/career_advisor.png",
+        "description": "AI-based web app to assist various aspects of your career development",
+        "skills": ["Prompt template", "Generative AI", "Llama", "Python", "Gradio"],
+        "icon": "solid fa-stamp"
+    },
     "Audio Summary": {
         "url": "projects/project.html?project=audio_summary",
         "image": "images/fulls/audio_summary.png",
         "description": "AI-enhanced audio summarization",
-        "skills": ["Speech-to-text", "Transformers", "Prompt template", "Generative AI", "Llama"],
+        "skills": ["Speech-to-text", "Transformers", "Prompt template", "Generative AI", "Llama", "Python", "Gradio"],
         "icon": "solid fa-stamp"
     },
     "Image Narrate": {
         "url": "projects/project.html?project=image_narrate",
         "image": "images/fulls/image_caption.png",
         "description": "AI-powered image caption generator",
-        "skills": ["Image-to-text", "Transformers", "Generative AI", "numpy", "PIL"],
+        "skills": ["Image-to-text", "Transformers", "Generative AI", "numpy", "PIL", "Python", "Gradio"],
         "icon": "solid fa-stamp"
     },
     "MMTrip": {

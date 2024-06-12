@@ -240,6 +240,52 @@
         "github_link" : "https://github.com/wentingzz/File-Assistant/",
         "demo_mp4": "../images/others/file_assistant.mp4"
     },
+    "career_advisor": {
+        "name": "CareerBoost",
+        "icon": "icon brands fa-github",
+        "icon_link": "https://github.com/wentingzz/Career-Advisor",
+        "description": "CareerBoost is driven by a commitment to revolutionize the job search experience, recognizing the challenges individuals face in crafting compelling application materials and navigating the intricacies of the hiring process. In response, CareerBoost offers a user-friendly platform that leverages AI and natural language processing to provide personalized guidance and support. It aims to empower job seekers by simplifying the process and helping them stand out to potential employers.\n\nTo achieve its goals, CareerBoost employs advanced natural language processing (NLP) algorithms to analyze and extract insights from various text-based documents, including resumes, job descriptions, and cover letters. These algorithms enable CareerBoost to understand the context and meaning of the content, allowing for tailored feedback and actionable recommendations. Furthermore, CareerBoost utilizes machine learning techniques to continuously enhance its advice based on user interactions. By analyzing user feedback and outcomes, CareerBoost refines its algorithms and suggestions to better meet the needs of job seekers, ultimately improving their chances of success in the job market.\n\nIn addition to its technical sophistication, CareerBoost prioritizes user experience through intuitive design and seamless integration with existing document formats. The platform's user-friendly interfaces and interactive features aim to streamline the process of optimizing application materials and generating personalized job search strategies. With CareerBoost, job seekers can approach their job search with confidence, knowing they have a powerful tool to support them in achieving their career goals.",
+        "demo": "#demo",
+        "demo_text": "Demo",
+        "features": [
+            {
+              "icon": "icon regular fa-file",
+              "title": "Document Analysis",
+              "description": "Utilizes advanced natural language processing (NLP) algorithms to analyze and extract insights from user input"
+            },
+            {
+              "icon": "icon solid fa-lightbulb",
+              "title": "LLM Integration",
+              "description": "Utilizes the LLAMA2_model from IBM WatsonX to generate responses using user queries."
+            },
+            {
+              "icon": "icon solid fa-user",
+              "title": "Personalized Recommendations",
+              "description": "Provides personalized recommendations and suggestions based on the analysis of user-provided documents"
+            }
+        ],
+        "technology_stack": [
+            "Python, Gradio, IBM Watson Machine Learning (WatsonxLLM, Model)"
+        ],
+        "more_tech": {
+            "icon": "icon solid fa-stamp",
+            "title": "Certificates",
+            "description": [
+                {
+                    "link": "https://www.coursera.org/account/accomplishments/specialization/FM4BA4PQDGS6",
+                    "text" : "IBM AI Developer Professional"
+                },
+                {
+                    "link": "https://www.coursera.org/account/accomplishments/specialization/RVKAGXHR8VB2",
+                    "text" : "Generative AI for Software Developers"
+                }
+            ]
+
+        },
+        "github_link" : "https://github.com/wentingzz/Career-Advisor",
+        "demo_mp4": "../images/others/career_advisor.mp4",
+        "demo_details": "In the Consult Advisor section, users can receive personalized advice by inputting details such as the position they are applying for, the job description, and their resume content. CareerBoost analyzes this information and provides tailored recommendations to improve the effectiveness of their application.\n\nThe Polish Resume feature allows users to refine their resume content by entering the position name, their resume content, and optional instructions for improvement. CareerBoost offers suggestions to enhance the quality and presentation of their resume, helping them to stand out to potential employers.\n\nThe Generate Cover Letter tool enables users to create a compelling cover letter by specifying the company name, position name, job description, and resume content. CareerBoost generates a well-crafted cover letter that highlights their qualifications and interest in the position, increasing their chances of securing an interview."
+    },
     "image_narrate": {
         "name": "Image Narrate",
         "icon": "icon brands fa-github",
