@@ -38,7 +38,7 @@
 									<header class="major">
 										<h2><a href="${project.icon_link}" class="${project.icon}"> ${project.name}</a></h2>
 									</header>
-									<p style="white-space: pre-line;">${project.description}</p>
+									${project.description.split('\n\n').map(line => `<p>${line}</p>`).join('')}
 									${project.demo && project.code ?
 										`<p>
 											<a href="${project.demo}" style="border-bottom: none; ">
@@ -116,10 +116,7 @@
 									${project.youtube_url ?
 										`<iframe src="${project.youtube_url}" style="width: 100%; aspect-ratio: 10/4;" frameborder="0" allowfullscreen></iframe>`
 										: ''}
-									${project.demo_details ? `<p style="white-space: pre-line;">${project.demo_details}</p>`: ''}
-
-
-
+									${project.demo_details ? `${project.demo_details.split('\n\n').map(line => `<p>${line}</p>`).join('')}`: ''}
 								</section>
 								<section id="four">
 									<div id="contact"></div>
