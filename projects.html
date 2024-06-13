@@ -25,17 +25,10 @@
 			</div>
 		</header>
 		<span class="openbtn" onclick="navChange()">&#9776;</span>
-		<div id="mySidenav" class="sidenav">
-			<a href="#llm">LLM</a>
-			<a href="#web">Web/Mobiles</a>
-<!--			<a href="projects.html">All Projects</a>-->
-			<a href="#tsp">TSP Algorithms</a>
-			<a href="#other">Other Projects</a>
-			<a href="#get_in_touch">Contact</a>
-		</div>
+		<div id="mySidenav" class="sidenav"></div>
 		<!-- Main -->
 		<div id="main" style="padding-top: 4em; ">
-			<section id="llm">
+			<section id="llm" data-abbr="LLM">
 				<h2>LLM Applications</h2>
 				<div class="row">
 					<article class="col-6 col-12-xsmall work-item" data-project="File Assistant"></article>
@@ -45,8 +38,7 @@
 				</div>
 			</section>
 
-			<!-- Two -->
-			<section id="web">
+			<section id="web" data-abbr="Web/Mobiles">
 				<h2>Web/Mobile Applications</h2>
 				<div class="row">
 					<article class="col-6 col-12-xsmall work-item" data-project="MMTrip"></article>
@@ -56,7 +48,7 @@
 				</div>
 			</section>
 
-			<section id="tsp">
+			<section id="tsp" data-abbr="TSP Algorithms">
 				<h2>Traveling Salesman Problem</h2>
 				<div class="row">
 					<article class="col-6 col-12-xsmall work-item" data-project="Ant Colony Optimization"></article>
@@ -65,7 +57,7 @@
 				</div>
 			</section>
 
-			<section id="other">
+			<section id="other" data-abbr="Other Projects">
 				<h2>Other Projects</h2>
 				<div class="row">
 					<article class="col-6 col-12-xsmall work-item" data-project="Time Manager"></article>
@@ -101,9 +93,7 @@
 				</div>
 			</section>
 
-			<!-- Three -->
-
-			<section id="get_in_touch">
+			<section id="get_in_touch" data-abbr="Contact">
 				<div id="contact"></div>
 			</section>
 

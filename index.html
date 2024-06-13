@@ -28,20 +28,12 @@
 			</div>
 		</header>
 		<span class="openbtn" onclick="navChange()">&#9776;</span>
-		<div id="mySidenav" class="sidenav">
-			<a href="#">About Me</a>
-			<a href="#project">Projects</a>
-<!--			<a href="projects.html">All Projects</a>-->
-			<a href="#award">Achievements</a>
-			<a href="#get_in_touch">Contact</a>
-		</div>
+		<div id="mySidenav" class="sidenav"></div>
 
-	<!-- Main -->
 		<div id="main">
-		<!-- One -->
-			<section id="one">
+			<section id="me" data-abbr="About Me">
 				<header class="major">
-					<h2>Introduction</h2>
+					<h2>About Me</h2>
 				</header>
 				<p>
 					Welcome to my portfolio! I'm Wenting, a software developer with expertise in full-stack web development and a passion for AI. With a master's degree in Computer Science and three years of experience, I excel in MS SQL Server, Django, React, Git and cutting-edge technologies.
@@ -56,8 +48,22 @@
 				</p>
 			</section>
 
-		<!-- Two -->
-			<section id="project">
+			<section id="work" data-abbr="Work History">
+				<h2>Work History</h2>
+				<div>
+					<article class="experience-item" data-experience="Java Developer Intern"></article>
+					<article class="experience-item" data-experience="Full Stack Developer"></article>
+					<article class="experience-item" data-experience="Software Developer Intern"></article>
+					<article class="experience-item" data-experience="Web Management Intern"></article>
+					<!-- Add more articles as needed -->
+				</div>
+				<br/>
+				<a href="images/others/Resume_WZ.pdf" style="margin-top: 2em; border-bottom: none;"> View Resume
+					<span class="icon solid fa-arrow-right"></span>
+				</a>
+			</section>
+
+			<section id="project" data-abbr="Projects">
 				<h2><a href="projects.html" style="border-bottom:none">Projects</a></h2>
 				<div class="row">
 					<article class="col-6 col-12-xsmall work-item" data-project="MMTrip"></article>
@@ -73,22 +79,7 @@
 				</a>
 			</section>
 
-			<section id="work">
-				<h2>Work Experience</h2>
-				<div>
-					<article class="experience-item" data-experience="Java Developer Intern"></article>
-					<article class="experience-item" data-experience="Full Stack Developer"></article>
-					<article class="experience-item" data-experience="Software Developer Intern"></article>
-					<article class="experience-item" data-experience="Web Management Intern"></article>
-					<!-- Add more articles as needed -->
-				</div>
-				<br/>
-				<a href="images/others/Resume_WZ.pdf" style="margin-top: 2em; border-bottom: none;"> View Resume
-					<span class="icon solid fa-arrow-right"></span>
-				</a>
-			</section>
-
-			<section id="award">
+			<section id="award" data-abbr="Achievements">
 				<h2>Achievements</h2>
 				<p>
 					<span class="icon solid fa-award"></span> 1st Place of <a href="https://www.iise.org/Details.aspx?id=33697">IISE-CIS Mobile App Competition</a>: MMTrip
@@ -146,8 +137,7 @@
 
 			</section>
 
-		<!-- Three -->
-			<section id="get_in_touch">
+			<section id="get_in_touch" data-abbr="Contact">
 				<div id="contact"></div>
 			</section>
 

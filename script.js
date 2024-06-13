@@ -50,6 +50,21 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         })
         .catch(error => console.error('Error fetching experience data:', error));
+
+    var sections = document.querySelectorAll('section');
+    var sidebar = document.getElementById('mySidenav');
+
+    sections.forEach(function(section) {
+        var link = document.createElement('a');
+        var abbr = section.getAttribute('data-abbr');
+        link.textContent = abbr;
+        link.href = '#' + section.id;
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            section.scrollIntoView({ behavior: 'smooth' });
+        });
+        sidebar.appendChild(link);
+    });
 });
 
 function navChange() {
