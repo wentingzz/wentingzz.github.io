@@ -14,11 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="image fit thumb">
                                 <img src="${project.image}" alt="${projectName}" />
                             </div>
+                            <h3>${iconHTML} ${projectName}</h3>
+                            <p>${project.description}</p>
                         </a>
-                        <h3>${iconHTML} ${projectName}</h3>
-                        <p>${project.description}</p>
-                        <p>${project.skills && project.skills.length > 0 ? `<span>${project.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}</span>` : ''}</p>
-
+	                    <p>${project.skills && project.skills.length > 0 ? `<span>${project.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}</span>` : ''}</p>
                     `;
                 }
             });
