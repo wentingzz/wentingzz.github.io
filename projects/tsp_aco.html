@@ -43,9 +43,7 @@
 					</p>
 				</section>
 				<section id="literature">
-					<header class="major">
-						<h2>Literature Summary</h2>
-					</header>
+					<h2>Literature Summary</h2>
 					<p>
 						Ant System, introduced by Marco Dorigo in 1992, mimics ants' behavior to find paths between nest and food sources. This concept led to the development of other algorithms in the ant colony optimization (ACO) family, such as the Max-Min Ant System by Hoos and Stützle in 1996 and Ant Colony Optimization by Gambardella and Dorigo in 1997. ACO is commonly used in planning and scheduling to minimize costs, including job scheduling, transportation choice, and vehicle routing. It also finds applications in fields like image processing and DNA sequencing.
 					</p>
@@ -71,9 +69,7 @@
 					</p>
 				</section>
 				<section>
-					<header class="major">
-						<h2>Methodology</h2>
-					</header>
+					<h2>Methodology</h2>
 					<p>
 						When implementing ACO, we modify the added pheromone amount to Q / (L<sup>k</sup>)<sup>2</sup> instead of Q / L<sup>k</sup>
 						to amplify differences in pheromone levels and reduce overlapping edges. We tested this algorithm on various TSP instances with known solutions. Due to the instability of traditional ACO, we finalized the implementation with the Max-Min Ant System (MMAS) for its stability.
@@ -96,10 +92,9 @@
 
 				</section>
 
-
-
 				<section id="demo">
 					<h2>Pseudocode <a style="color:#41C9E2" href="https://github.com/wentingzz/Julia_ACO_TSP" class="icon brands fa-github"></a></h2>
+
 <pre>
 	function ACO(graph, num_ants, num_iterations, alpha, beta, rho, q):
 		Initialize pheromone levels on edges
@@ -129,9 +124,7 @@
 				</section>
 
 				<section>
-					<header class="major">
-						<h2>Result</h2>
-					</header>
+					<h2>Result</h2>
 					<p>
 						The mean lengths are depicted in the following graphs, showcasing the impact of parameter values (α, β, ρ), and performance (e), where a smaller value is preferable.
 					</p>
