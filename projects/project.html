@@ -98,6 +98,11 @@
 										</article>
 									</div>
 								</section>
+								${project.flow ?
+									`<section>
+										<h2>Flow</h2>
+										${project.flow}
+									</section>` : ''}
 								<section id="demo">
 									<h2>${project.demo_text}
 										${project.github_link ? `<a href="${project.github_link}" class="icon brands fa-github"></a>`:''}

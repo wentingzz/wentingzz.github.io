@@ -89,6 +89,54 @@
         "demo_img": "../images/fulls/itrust2.jpg"
 
     },
+    "logjam": {
+        "name": "Logjam.Next",
+        "icon": "icon brands fa-github",
+        "icon_link": "https://github.com/wentingzz/LogjamNext",
+        "description": "Logjam.Next was developed specifically for NetApp to address the unique challenges they face in managing and analyzing log data. NetApp, as a leading provider of data management solutions, handles vast amounts of log data from various sources. Logjam.Next aims to enhance NetApp's ability to process and analyze this data efficiently, providing them with valuable insights to improve their products and services. By leveraging the latest technologies and best practices in log processing, Logjam.Next is tailored to meet NetApp's specific requirements, ensuring seamless integration and optimal performance within their existing infrastructure.",
+        "demo": "#demo",
+        "demo_text": "Snapshot",
+        "features": [
+            {
+                "icon": "icon solid fa-sitemap",
+                "title": "Parallel Processing",
+                "description": "Processes nodes in parallel, allowing for faster and more efficient log analysis, especially when handling large volumes of data."
+            },
+            {
+                "icon": "icon solid fa-list-check",
+                "title": "Task Resumption",
+                "description": "Picks up the last interrupted task and resumes work from that point. This ensures that log processing tasks can be resumed without loss of progress, even in the event of interruptions or failures."
+            },
+            {
+                "icon": "icon solid fa-magnifying-glass",
+                "title": "Abnormal Log Detection",
+                "description": "Detects abnormal logs, which is crucial for identifying potential issues or anomalies within the system."
+            },
+            {
+                "icon": "icon regular fa-paper-plane",
+                "title": "Interactive Web Interface",
+                "description": "Provides an interactive web interface, which makes it easier for users to analyze and understand the log data visually."
+            }
+        ],
+        "technology_stack": [
+            "Backend: Python, Flask, REST APIs\nFrontend: Vue.js\nData Storage: ElasticSearch\nCI/CD: Docker"
+        ],
+        "more_tech": {
+            "icon": "icon solid fa-certificate",
+            "title": "Milestone",
+            "description": [
+                {
+                    "link": "https://www.csc.ncsu.edu/news/2292",
+                    "text" : "Senior Design @ NC State University"
+                }
+            ]
+
+        },
+        "flow": "<div style=\"text-align: center;\"><img width=\"90%\" src=\"../images/fulls/logjam_cover.png\" alt=\"\" /></div>",
+        "demo_mp4": "../images/others/logjam_backend.mp4",
+        "demo_details": "\n\nThe video above illustrates the flow of Logjam.Next, a log processing tool. Data is initially stored in NFS. If the data is zipped, nodes are extracted. Multiple threads are then utilized to process these nodes in parallel, improving program speed as this is a bottleneck. The extracted nodes are inserted into ElasticSearch using REST APIs. \n\n<img width=\"90%\" src=\"../images/fulls/logjam.png\" alt=\"\" \n\nAfter all nodes are inserted, the system gains a comprehensive understanding of normal log file patterns. The NetApp Support team can then access the UI, as depicted in the image below, to paste a log and analyze its normality. Users can also specify the platform and versions they are using or leave the default choice as All Platform/Version for general diagnosis."
+
+    },
     "genshin": {
         "name": "Genshin Impact Planner",
         "icon": "icon solid fa-code",

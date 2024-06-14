@@ -41,7 +41,7 @@
         "description": "Personalized meal planning and nutrition tracking app"
     },
     "Logjam.Next": {
-        "url": "projects/logjam.html",
+        "url": "projects/project.html?project=logjam",
         "image": "images/fulls/logjam_cover1.png",
         "skills": ["Python", "Flask", "Vue.js", "REST APIs", "ElasticSearch", "Docker", "multiprocessing"],
         "description": "Log processing and analysis tool for TB-scale data"
