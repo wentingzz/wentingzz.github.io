@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Backward Compatibility</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
+
+
+	</head>
+	<body class="is-preload">
+		<div class="back-link">
+			<a href="javascript:void(0);" onclick="checkHistory()" style="border-bottom: none; ">
+				<span class="icon solid fa-arrow-left" style="font-size: 24px"></span>
+			</a>
+		</div>
+		<!-- Main -->
+			<div id="project">
+				<section id="intro">
+					<header class="major">
+						<h2><a href="#more" class="icon regular fa-bookmark" > Backward Compatibility</a></h2>
+					</header>
+					<p>During my time working on the StoreGazer product at EDJ Enterprises Inc., I encountered numerous instances where we needed to modify the existing database. Early in my tenure, I inadvertently caused a significant issue by breaking the database for all colleges. This incident exemplified a backward compatibility issue: while I modified the database code and backend assets, our colleague, who were using the same database, were akin to clients who had only updated their database code. The core problem was that my new SQL code was not compatible with the existing codebase used by my colleagues. So, what is backward compatibility?</p>
+					<p>Backward compatibility is a critical concept in software development that ensures newer versions of software remain compatible with older versions. It enables existing systems, applications, or interfaces to continue functioning correctly even after updates or modifications. This approach allows users to adopt new features and improvements without experiencing disruptions in their workflow or having to make extensive changes to their existing systems.</p>
+					<p>Understanding the concept of backward compatibility, let's see examples of both poor and effective practices. </p>
+				</section>
+				<section>
+					<h2>Backward Compatibility</h2>
+					<p>Here is the original version of the code. In the updated version, we want to include the additional table <code>Products</code>. </p>
+					<pre><code class="language-sql" data-lang="sql">CREATE PROCEDURE GetCustomerData
+AS
+BEGIN
+    SELECT * FROM Customers;
+    SELECT * FROM Orders;
+END</code></pre>
+					<pre><code class="language-sql" data-lang="vb">Function GetCustomerDataSet() As DataSet
+	Dim connectionString As String = "Your_Connection_String"
+	Dim customerProcedureName As String = "GetCustomerData"
+
+	Dim customerDataSet As New DataSet()
+	Using connection As New SqlConnection(connectionString)
+		Using customerCommand As New SqlCommand(customerProcedureName, connection)
+			customerCommand.CommandType = CommandType.StoredProcedure
+			Dim adapter As New SqlDataAdapter(customerCommand)
+			adapter.Fill(customerDataSet)
+
+			If dataSet.Tables.Count <> 2 Then
+				Throw New Exception("Number of tables returned is not 2.")
+			End If
+		End Using
+	End Using
+	Return customerDataSet
+End Sub</code></pre>
+					<p>
+						Adding another returned table in a stored procedure is straightforward. We simply add a new line in <code>GetCustomerData</code> and remove the check for<code>dataSet.Tables.Count <> 2</code>.
+					</p>
+					<pre><code class="language-sql" data-lang="sql">CREATE PROCEDURE GetCustomerData
+AS
+BEGIN
+    SELECT * FROM Customers;
+    SELECT * FROM Orders;
+    SELECT * FROM Products;
+END</code></pre>
+					<pre><code class="language-sql" data-lang="vb">Function GetCustomerDataSet() As DataSet
+	Dim connectionString As String = "Your_Connection_String"
+	Dim customerProcedureName As String = "GetCustomerData"
+
+	Dim customerDataSet As New DataSet()
+	Using connection As New SqlConnection(connectionString)
+		Using customerCommand As New SqlCommand(customerProcedureName, connection)
+			customerCommand.CommandType = CommandType.StoredProcedure
+			Dim adapter As New SqlDataAdapter(customerCommand)
+			adapter.Fill(customerDataSet)
+		End Using
+	End Using
+	Return customerDataSet
+End Sub</code></pre>
+					<p>The issue we face is the potential introduction of backward compatibility problems to our system. Consider a scenario where a user only updates the database code: <code>GetCustomerDataSet</code> function will throw an error because the database now returns 3 tables instead of 2. The new SQL procedure is not backward compatible with previous versions of the VB code.
+						</p>
+					<p>
+						A better solution would be to leave <code>GetCustomerDataSet</code> untouched and add another SQL procedure and function for the new version. We can create a new SQL procedure <code>GetProducts</code> that returns data in the <code>Products</code> format and call it in a new function <code>GetCombinedDataSets</code>. We also need to handle the case where <code>GetProducts</code> procedure does not exist in the database due to backward compatibility issues. Finally, we can combine the results and return them as the final result.
+					</p>
+					<pre><code class="language-sql" data-lang="sql">CREATE PROCEDURE GetProducts
+AS
+BEGIN
+    SELECT * FROM Products;
+END</code></pre>
+
+					<pre><code class="language-sql" data-lang="vb">Function GetCombinedDataSets() As (customerDataSet As DataSet, productsDataSet As DataSet)
+	Dim customerDataSet = GetCustomerDataSet()
+
+	Dim connectionString As String = "Your_Connection_String"
+	Dim productsProcedureName As String = "GetProducts"
+	Dim productsDataSet As New DataSet()
+
+	Using connection As New SqlConnection(connectionString)
+		connection.Open()
+
+		Dim productsProcedureExists As Boolean = False
+		Using cmd As New SqlCommand("SELECT COUNT(*) FROM sys.procedures WHERE name = @ProcedureName", connection)
+			cmd.Parameters.AddWithValue("@ProcedureName", productsProcedureName)
+			productsProcedureExists = Convert.ToInt32(cmd.ExecuteScalar()) > 0
+		End Using
+
+		If productsProcedureExists Then
+			Using productsCommand As New SqlCommand(productsProcedureName, connection)
+				productsCommand.CommandType = CommandType.StoredProcedure
+				Dim adapter As New SqlDataAdapter(productsCommand)
+				adapter.Fill(productsDataSet)
+			End Using
+		End If
+	End Using
+
+	Return (customerDataSet, productsDataSet)
+End Function</code></pre>
+				</section>
+
+				<section>
+					<h2>Reflection</h2>
+
+					<p>building a school project is very different from working on a real-life project. In school projects, we can modify anything as our main focus is to build the project and make things work with minimal effort and time. However, in real-life projects, we need to consider the use cases for users, ensuring that our UI is user-friendly and self-explanatory. In this scenario, we also need to account for code from previous versions. A beneficial approach is via testing compatibility before deploying or even before pushing the code. This way, we can identify and address potential issues early, ensuring that new updates do not disrupt existing functionality. By incorporating thorough testing practices, we can minimize unexpected errors, maintain backward compatibility, leading to a more successful deployment process and a smoother users experience. </p>
+					<p>Strive for more than just making something functional; aim for excellence.</p>
+				</section>
+
+				<section id="four">
+					<div id="contact"></div>
+				</section>
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+			<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+			<script src="project_page.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-sql.min.js"></script>
+	</body>
+</html>
