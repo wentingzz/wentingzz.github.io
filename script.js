@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('projects/projects.json')
+    fetch('pages/projects.json')
         .then(response => response.json())
         .then(data => {
             const articles = document.querySelectorAll('.work-item');
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Error fetching project data:', error));
 
-    fetch('projects/experience.json')
+    fetch('pages/experience.json')
         .then(response => response.json())
         .then(data => {
             const experiences = document.querySelectorAll('.experience-item');
@@ -36,12 +36,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     experience.innerHTML = `
                         <a href="${exp.url}">
                             <div class="two-column">
-						        <h4>${experienceName} <span class="icon solid fa-link"></span></h4>
+						        <h4>${experienceName} ${exp.website ? `<span class="icon regular fa-bookmark"></span>` : `<span class="icon solid fa-link"></span>`}</h4>
 						        <p>${exp.duration}</p>
 						    </div>
 					        <div class="two-column">
 						        <span>${exp.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}</span>
-						        <p>${exp.company}</p>
+
+						        ${exp.website ? `<a href="${exp.website}" class="icon solid fa-link"> ${exp.company}</a>` : `<p>${exp.company}</p>`}
 						    </div>
 					    </a>
                     `;
@@ -93,3 +94,13 @@ var sideNav = document.getElementById("mySidenav");
 sideNav.addEventListener("mouseleave", function() {
     this.style.width = "0";
 });
+
+const {Translate} = require('@google-cloud/translate').v2;
+const translate = new Translate();
+
+async function translateText() {
+    const [translation] = await translate.translate('Hello, world!', 'es');
+    console.log(`Translated text: ${translation}`);
+}
+
+translateText();

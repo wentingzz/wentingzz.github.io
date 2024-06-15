@@ -3,13 +3,15 @@
         "company": "ProMazo Inc.",
         "duration": "Jun 2023 - Sep 2023",
         "skills": ["Java", "SQL Server", "YAML"],
-        "url": "https://promazo.com/"
+        "url": "pages/sql_partition.html",
+        "website": "https://promazo.com/"
     },
     "Full Stack Developer": {
         "company": "EDJ Enterprises Inc.",
         "duration": "Jan 2020 - Aug 2022",
         "skills": ["C#", "SQL Server", "Javascript", "Devexpress", "HTML", "CSS"],
-        "url": "http://www.edj.com/wp-content/uploads/2017/07/2017-storegazer_rs.pdf"
+        "url": "pages/backward_compatible.html",
+        "website": "http://www.edj.com/wp-content/uploads/2017/07/2017-storegazer_rs.pdf"
 
     },
     "Software Developer Intern": {

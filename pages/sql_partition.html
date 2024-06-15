@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>SQL Partition</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
+
+
+	</head>
+	<body class="is-preload">
+		<div class="back-link">
+			<a href="javascript:void(0);" onclick="checkHistory()" style="border-bottom: none; ">
+				<span class="icon solid fa-arrow-left" style="font-size: 24px"></span>
+			</a>
+		</div>
+		<!-- Main -->
+			<div id="project">
+				<section id="intro">
+					<header class="major">
+						<h2><a href="#more" class="icon regular fa-bookmark" > SQL Partitioning </a></h2>
+					</header>
+					<p>In the collaborative project between ProMazo and Charles Schwab, a key objective is to facilitate the archival of rows from an existing table to an archived table. The intuitive approach is to use</p>
+					<pre><code class="language-sql" data-lang="sql">INSERT INTO Archived_Table (id, title)
+SELECT id, title FROM Current_Table;</code></pre>
+					<p> However, while this method works well for small tables, it is not feasible for large enterprises like Schwab, which manage terabyte-scale data. Executing the above code on such a scale could potentially take months to complete the data transfer process. This inefficiency led us to explore alternative solutions, one of which is partitioning. </p>
+					<p>Here are some of my notes from exploring partitioning in this journey.</p>
+
+				</section>
+				<section>
+					<h2>Why Partitioning?</h2>
+					<p>
+						Partitioning in MS SQL Server is a database design technique used to divide large tables into smaller, more manageable parts called partitions. Each partition has its own filegroup in the database. There are several reasons why you might want to partition a table:
+					</p>
+					<ul>
+						<li><strong>Performance</strong>: Partitioning can improve query performance by allowing SQL Server to access only the relevant partitions when executing queries. This is especially beneficial for tables with a large amount of data, as it reduces the number of rows that need to be scanned.</li>
+						<li><strong>Manageability</strong>: Partitioning can make it easier to manage large tables by allowing you to perform operations, such as backup and restore, on individual partitions instead of the entire table.</li>
+						<li><strong>Parallelism</strong>: Partitioning can improve parallel query processing by allowing SQL Server to process multiple partitions concurrently.</li>
+					</ul>
+					<h2>When to use?</h2>
+					<ul>
+						<li><strong>Data Archiving</strong>: Partitioning can be used for data archiving purposes, where older data is moved to separate partitions that are stored on slower, less expensive storage devices.</li>
+						<li><strong>Data Distribution</strong>: Partitioning can help distribute data across multiple physical disks, improving I/O performance.</li>
+						<li><strong>Sliding Window Scenario</strong>: For scenarios where data is frequently added and purged based on a time range (like logs, sensor data, etc.), partitioning based on time can simplify data maintenance and improve performance.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Create Partitioning</h2>
+					<p>To create partitioning, we need to specify the partitioning strategy, such as the partition function and scheme. The partition function defines how the data is divided based on a specific column or expression, such as dates or numeric ranges. The partition scheme maps the partitions to physical filegroups where the data will be stored. Here is an example of creating a year-based partitioning scheme, which can be used on tables later. </p>
+					<pre><code class="language-sql" data-lang="sql">-- Step 1: Create the Partition Function
+CREATE PARTITION FUNCTION pfYear (DATETIME)
+AS RANGE RIGHT FOR VALUES ('2023-01-01', '2024-01-01', '2025-01-01');
+
+-- Step 2: Create the Partition Scheme
+CREATE PARTITION SCHEME psYear
+AS PARTITION pfYear TO ([PRIMARY], [PRIMARY], [PRIMARY], [PRIMARY]);</code></pre>
+				</section>
+				<section id="literature">
+					<h2>Partitioning during Table Creation</h2>
+					<p>
+						The simplest approach is to incorporate partitioning during the table's creation. Let's create a Users table utilizing the year partition, pfYear, we've just established.
+					</p>
+					<pre><code class="language-sql" data-lang="sql">--Create table with partition
+CREATE TABLE Users (
+    user_id INT NOT NULL,
+    username NVARCHAR(50) NOT NULL,
+    email NVARCHAR(100) NOT NULL,
+    password_hash NVARCHAR(255) NOT NULL,
+    created_at DATETIME DEFAULT GETDATE(),
+    last_login_date DATETIME
+)ON psYear (last_login_date);
+
+INSERT INTO Users (user_id, username, email, password_hash, last_login_date)
+VALUES
+(1, 'John Doe', 'john.doe@example.com', 'hashed_password_1', '2022-06-01 10:30:00'),
+(2, 'Jane Smith', 'jane.smith@example.com', 'hashed_password_2', '2023-06-10 12:45:00'),
+(3, 'Alice Jones', 'alice.jones@example.com', 'hashed_password_3', '2024-05-13 09:15:00');</code></pre>
+					<p>
+						We can create additional tables and switch partitions between them as needed. This allows for efficient data management and storage optimization.
+					</p>
+					<pre><code class="language-sql" data-lang="sql">--Create more table with partition
+CREATE TABLE Archived_Users (
+    user_id INT NOT NULL,
+    username NVARCHAR(50) NOT NULL,
+    email NVARCHAR(100) NOT NULL,
+    password_hash NVARCHAR(255) NOT NULL,
+    created_at DATETIME DEFAULT GETDATE(),
+    last_login_date DATETIME
+)
+ON psYear (last_login_date);
+
+-- move second chunch of data from Users to Archived_Users
+ALTER TABLE Users SWITCH PARTITION 2 TO Archived_Users PARTITION 2;</code></pre>
+					<p>Note that there are some requirements for switch statement to work:</p>
+						<ul>
+							<li><strong>Schema Compatibility</strong>: the source and destination tables must have the same schema, including column names, data types, and constraints.</li>
+							<li><strong>Non-Empty Source Partition</strong>: the source partition in the source table must not be empty. It must contain rows that match the partitioning scheme of the destination table.</li>
+							<li><strong>Partition Alignment</strong>: the source partition's range must be a subrange of the destination partition's range.</li>
+							<li><strong>Permissions</strong>: you need the necessary permissions to perform the SWITCH PARTITION operation.</li>
+						</ul>
+				</section>
+				<section>
+					<h2>Partitioning an Existing Table</h2>
+					<p>Adding partitions during table creation is the most straightforward approach, but it necessitates knowing the partitioning requirements in advance. Often, the need for partitioning arises when a table grows significantly, making it difficult to anticipate these needs when initially creating the table. Let's consider an example where you've created a table without partitions, inserted data into it, and now need to partition it after the fact.</p>
+					<pre><code class="language-sql" data-lang="sql">-- create Users
+CREATE TABLE Users (
+    user_id INT PRIMARY KEY,
+    username NVARCHAR(50) NOT NULL,
+    email NVARCHAR(100) NOT NULL,
+    password_hash NVARCHAR(255) NOT NULL,
+    created_at DATETIME DEFAULT GETDATE(),
+    last_login_date DATETIME
+);
+
+-- insert
+INSERT INTO Users (user_id, username, email, password_hash, last_login_date)
+VALUES
+(1, 'John Doe', 'john.doe@example.com', 'hashed_password_1', '2022-06-01 10:30:00'),
+(2, 'Jane Smith', 'jane.smith@example.com', 'hashed_password_2', '2023-06-10 12:45:00'),
+(3, 'Alice Jones', 'alice.jones@example.com', 'hashed_password_3', '2024-05-13 09:15:00');</code></pre>
+					<p>
+						Using the code from previous section will result in an error because the Users and Archive_Users tables do not have the same index. As previously mentioned, schema compatibility is required for switching partitions. In this case, we add indexes to both tables to ensure they match.
+					</p>
+
+					<pre><code class="language-sql" data-lang="sql">--Create more table with partition
+CREATE TABLE Archived_Users (
+    user_id INT NOT NULL,
+    username NVARCHAR(50) NOT NULL,
+    email NVARCHAR(100) NOT NULL,
+    password_hash NVARCHAR(255) NOT NULL,
+    created_at DATETIME DEFAULT GETDATE(),
+    last_login_date DATETIME
+)
+ON psYear (last_login_date);
+
+-- move second chunch of data from Users to Archived_Users
+CREATE NONCLUSTERED INDEX User_Last_Login_Partition ON Users (last_login_date, user_id)
+  WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF,
+        ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON,FILLFACTOR = 85)
+  ON psYear(last_login_date)
+GO
+
+CREATE CLUSTERED INDEX CI_Archived_Users_user_id ON Archived_Users(user_id);
+
+-- move second chunch of data from Users to Archived_Users
+ALTER TABLE Users SWITCH PARTITION 2 TO Archived_Users PARTITION 2;</code></pre>
+					<p>
+						However, this still gives us error <code>'ALTER TABLE SWITCH' statement failed. The index 'User_Last_Login_Partition' is partitioned while table 'db_42fvsbpny_42g8ahykb.dbo.Users' is not partitioned </code>. This error occurs because the primary key of the Users table is not partitioned by year, while CI_Archived_Users_user_id is partitioned. The latter is partitioned because the Archived_Users table is already partitioned by year upon creation. To resolve this issue, we must drop the primary key constraint on Users and then re-add it with the appropriate partitioning. Here shows the full code:
+					</p>
+					<pre><code class="language-sql" data-lang="sql">-- Create Users table without partition and insert rows
+CREATE TABLE Users (
+    user_id INT PRIMARY KEY,
+    username NVARCHAR(50) NOT NULL,
+    email NVARCHAR(100) NOT NULL,
+    password_hash NVARCHAR(255) NOT NULL,
+    created_at DATETIME DEFAULT GETDATE(),
+    last_login_date DATETIME
+);
+INSERT INTO Users (user_id, username, email, password_hash, last_login_date)
+VALUES
+(1, 'John Doe', 'john.doe@example.com', 'hashed_password_1', '2022-06-01 10:30:00'),
+(2, 'Jane Smith', 'jane.smith@example.com', 'hashed_password_2', '2023-06-10 12:45:00'),
+(3, 'Alice Jones', 'alice.jones@example.com', 'hashed_password_3', '2024-05-13 09:15:00');
+
+-- Create the Partition Function & Scheme
+CREATE PARTITION FUNCTION pfYear (DATETIME)
+AS RANGE RIGHT FOR VALUES ('2023-01-01', '2024-01-01', '2025-01-01');
+CREATE PARTITION SCHEME psYear
+AS PARTITION pfYear TO ([PRIMARY], [PRIMARY], [PRIMARY], [PRIMARY]);
+
+-- Create the Partitioned Table
+CREATE TABLE Archived_Users (
+    user_id INT NOT NULL,
+    username NVARCHAR(50) NOT NULL,
+    email NVARCHAR(100) NOT NULL,
+    password_hash NVARCHAR(255) NOT NULL,
+    created_at DATETIME DEFAULT GETDATE(),
+    last_login_date DATETIME
+)
+ON psYear (last_login_date);
+
+-- Add CLUSTERED index to Archived_Users
+CREATE UNIQUE CLUSTERED INDEX NI_Archived_Users_user_id ON Archived_Users(user_id, last_login_date)
+
+-- Drop PK index on Users and re-add it with partitioning
+DECLARE @constraint_name NVARCHAR(255);
+SELECT @constraint_name = name
+FROM sys.key_constraints
+WHERE type = 'PK' AND parent_object_id = OBJECT_ID('Users');
+EXEC('ALTER TABLE Users DROP CONSTRAINT ' + @constraint_name);
+-- Re-add PK
+CREATE UNIQUE CLUSTERED INDEX PK_Users
+ON Users(user_id, last_login_date)
+ON psYear(last_login_date);
+
+ALTER TABLE Users SWITCH PARTITION 2 TO Archived_Users PARTITION 2;</code></pre>
+
+
+
+
+				</section>
+
+				<section>
+					<h2>Partition Information for a Table</h2>
+					<p>You can retrieves information about partitions for a specific table with the following code:</p>
+					<pre><code class="language-sql" data-lang="sql">SELECT
+    o.name AS objectname,
+    i.name AS indexname,
+    p.partition_id,
+    p.partition_number,
+    [rows],
+    prv.value AS partition_value
+FROM sys.partitions p
+INNER JOIN sys.objects o ON o.object_id = p.object_id
+INNER JOIN sys.indexes i ON i.object_id = p.object_id AND p.index_id = i.index_id
+LEFT JOIN sys.partition_schemes ps ON ps.data_space_id = i.data_space_id
+LEFT JOIN sys.partition_functions pf ON pf.function_id = ps.function_id
+LEFT JOIN sys.partition_range_values prv ON prv.function_id = pf.function_id AND prv.boundary_id = p.partition_number
+WHERE o.name = 'Users';</code></pre>
+				</section>
+
+				<section>
+					<h2>Reflection</h2>
+
+					<p>Managing small datasets is vastly different from managing large datasets. Techniques that work well for small tables often become inefficient and impractical for big data. For instance, the INSERT INTO ... SELECT ... FROM method, commonly learned and used in school projects, may suffice for smaller datasets but can take months to complete with terabyte-scale data, as seen in our project with Charles Schwab. Continuous learning and practice are essential after obtaining a degree to bridge the gap between academic projects and real-life applications.</p>
+					<p  lang="en">Another crucial aspect is foreseeing the need for partitioning. Incorporating partitioning during table creation is straightforward and can save considerable effort down the line. In contrast, adding partitioning to an existing table requires additional steps and can be more complex and time-consuming. If we anticipate that our tables will grow significantly, it’s essential to plan for partitioning from the outset. This foresight will ensure smoother operations and better performance as the dataset scales.</p>
+				</section>
+
+				<section id="four">
+					<div id="contact"></div>
+				</section>
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+			<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+			<script src="project_page.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-sql.min.js"></script>
+	</body>
+</html>

@@ -1,53 +1,53 @@
 {
     "File Assistant": {
-        "url": "projects/project.html?project=file_assistant",
+        "url": "pages/project.html?project=file_assistant",
         "image": "images/fulls/file_assistant.png",
         "description": "AI-based chatbot for file content analysis and question answering",
         "skills": ["Chatbot","Langchain","Embedding", "Context", "Python", "Flask"],
         "icon": "solid fa-stamp"
     },
     "Career Advisor": {
-        "url": "projects/project.html?project=career_advisor",
+        "url": "pages/project.html?project=career_advisor",
         "image": "images/fulls/career_advisor.png",
         "description": "AI-based web app to assist various aspects of your career development",
         "skills": ["Prompt template", "Generative AI", "Llama", "Python", "Gradio"],
         "icon": "solid fa-stamp"
     },
     "Audio Summary": {
-        "url": "projects/project.html?project=audio_summary",
+        "url": "pages/project.html?project=audio_summary",
         "image": "images/fulls/audio_summary.png",
         "description": "AI-enhanced audio summarization",
         "skills": ["Speech-to-text", "Transformers", "Prompt template", "Generative AI", "Llama", "Python", "Gradio"],
         "icon": "solid fa-stamp"
     },
     "Image Narrate": {
-        "url": "projects/project.html?project=image_narrate",
+        "url": "pages/project.html?project=image_narrate",
         "image": "images/fulls/image_caption.png",
         "description": "AI-powered image caption generator",
         "skills": ["Image-to-text", "Transformers", "Generative AI", "numpy", "PIL", "Python", "Gradio"],
         "icon": "solid fa-stamp"
     },
     "MMTrip": {
-        "url": "projects/project.html?project=mmtrip",
+        "url": "pages/project.html?project=mmtrip",
         "image": "images/fulls/mmtrip.jfif",
         "description": "Personalized trip planner web application",
         "skills": ["Python", "React", "Django", "CSS", "AWS", "Machine Learning", "REST APIs", "Google Map APIs", "SerpAPI", "OpenStreet", "Directions", "Overpass"],
         "icon": "solid fa-award"
     },
     "NutriPlan": {
-        "url": "projects/project.html?project=nutriplan",
+        "url": "pages/project.html?project=nutriplan",
         "image": "images/fulls/nutriplan.png",
         "skills": ["Dart", "FlutterFlow", "FireBase", "NoSQL", "REST APIs"],
         "description": "Personalized meal planning and nutrition tracking app"
     },
     "Logjam.Next": {
-        "url": "projects/project.html?project=logjam",
+        "url": "pages/project.html?project=logjam",
         "image": "images/fulls/logjam_cover1.png",
         "skills": ["Python", "Flask", "Vue.js", "REST APIs", "ElasticSearch", "Docker", "multiprocessing"],
         "description": "Log processing and analysis tool for TB-scale data"
     },
     "iTrust2": {
-        "url": "projects/project.html?project=itrust2",
+        "url": "pages/project.html?project=itrust2",
         "image": "images/fulls/itrust2.jpg",
         "skills": ["Java", "AngularJS", "Javascript", "HTML", "CSS", "MySQL", "Spring", "JUnit", "Cucumber", "Selenium","Jenkins"],
         "description": "Web-based electronic health records system"
@@ -60,39 +60,39 @@
         "icon": "solid fa-award"
     },
     "Ant Colony Optimization": {
-        "url": "projects/tsp_aco.html",
+        "url": "pages/tsp_aco.html",
         "image": "images/fulls/aco.avif",
         "description": "A metaheuristic optimization algorithm inspired by the foraging behavior of ants.",
         "skills": ["Julia"],
         "icon": "solid fa-award"
     },
     "Stochastic Local Search with Simulated Annealing": {
-        "url": "projects/tsp_sls_sa.html",
+        "url": "pages/tsp_sls_sa.html",
         "image": "images/fulls/sls.gif",
         "skills": ["Python"],
         "description": "A hybrid optimization algorithm to efficiently explore solution spaces and find near-optimal solutions."
     },
     "Branch-and-Bound Depth-First Search": {
-        "url": "projects/tsp_bnb_dfs.html",
+        "url": "pages/tsp_bnb_dfs.html",
         "image": "images/fulls/dfs.png",
         "skills": ["Python"],
         "description": "An algorithm that explores the search space by dividing it into smaller subspaces and selectively exploring only those with potential optimal solutions, using depth-first search."
     },
     "Time Manager": {
-        "url": "projects/project.html?project=time_manager",
+        "url": "pages/project.html?project=time_manager",
         "image": "images/fulls/calendar.png",
         "description": "Machine learning-powered calendar scheduler",
         "skills": ["Python", "scikit-learn", "Google Calendar API", "numpy", "pandas"],
         "icon": "solid fa-award"
     },
     "Get My Paper": {
-        "url": "projects/project.html?project=get_my_paper",
+        "url": "pages/project.html?project=get_my_paper",
         "image": "images/fulls/get_my_paper.jfif",
         "skills": ["Python", "BeautifulSoup", "request"],
         "description": "Web scraper to download papers"
     },
     "Genshin Planner": {
-        "url": "projects/project.html?project=genshin",
+        "url": "pages/project.html?project=genshin",
         "image": "images/fulls/genshin_cover.jfif",
         "skills": ["Excel", "Javascript"],
         "description": "Game resource weekly planner"
