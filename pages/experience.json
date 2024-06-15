@@ -24,6 +24,7 @@
         "company": "Office of IT at NC State University",
         "duration": "Mar 2017 - Dec 2019",
         "skills": ["WordPress", "PHP", "MFA", "HTML","CSS"],
-        "url": "https://oit.ncsu.edu/"
+        "url": "pages/typescript.html",
+        "website": "https://oit.ncsu.edu/"
     }
 }
