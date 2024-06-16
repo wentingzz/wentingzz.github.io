@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Tips for MS SQL Server</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
+
+
+	</head>
+	<body class="is-preload">
+		<div class="back-link">
+			<a href="javascript:void(0);" onclick="checkHistory()" style="border-bottom: none; ">
+				<span class="icon solid fa-arrow-left" style="font-size: 24px"></span>
+			</a>
+		</div>
+		<!-- Main -->
+			<div id="project">
+				<section id="intro">
+					<header class="major">
+						<h2><a href="#more" class="icon regular fa-bookmark" > Tips for MS SQL Server</a></h2>
+					</header>
+					<p>During my software developer internship at EDJ Enterprises Inc., I gained valuable insights into best practices for modifying existing databases in SQL Server. I learned the importance of using transactions with commit to ensure that changes are permanently saved to the database only when all modifications are successful. Additionally, I discovered the utility of transactions with rollback, which allow for the complete reversal of changes in case of errors or issues during the modification process. Furthermore, I learned about savepoints, which provide a way to mark a point within a transaction to which you can later roll back if necessary, allowing for more granular control over the modification process. These practices not only ensure data integrity but also enhance the overall robustness of database operations.</p>
+				</section>
+				<section>
+					<h2>Useful Tips/Techniques in SQL Server</h2>
+					<ol>
+						<li>
+							<h3>Using Transactions with Commit</h3>
+							<p>Transactions are essential techniques in database systems to align with ACID (Atomicity, Consistency, Isolation, Durability) requirements and avoid race conditions. Suppose we have a banking application where we need to transfer funds between two accounts, which consists of deduction on account A and addition on account B. Those two actions need to occur simultaneously so we can use a transaction with commit to make sure the transfer is atomic, consistent, isolated, and durable. </p>
+							<pre><code class="language-sql" data-lang="sql">-- Start an explicit transaction
+BEGIN TRANSACTION;
+
+-- Deduct amount from Account A
+UPDATE Accounts
+SET Balance = Balance - TransferAmount
+WHERE AccountNumber = 'A';
+
+-- Add amount to Account B
+UPDATE Accounts
+SET Balance = Balance + TransferAmount
+WHERE AccountNumber = 'B';
+
+-- Commit the transaction if both updates succeed
+COMMIT TRANSACTION;
+
+-- Roll back the transaction if any update fails
+ROLLBACK TRANSACTION;</code></pre>
+							<p>In this example, if either of the <code>UPDATE</code> statements fails (e.g., due to insufficient balance), the transaction is rolled back, ensuring that the transfer is atomic. If both updates succeed, the changes are committed using <code>COMMIT TRANSACTION</code>, making them permanent. </p>
+						</li>
+
+						<li>
+							<h3>Using Transactions with Rollback</h3>
+							<p>When implementing new features that modifies existing tables, using transactions is crucial for maintaining data integrity and ensuring safe implementation. A transaction provides a controlled environment where changes can be made and tested without immediately affecting the underlying database. </p>
+							<p>In the following example of creating and testing the dbo.UpdateUserNameById procedure, a transaction allows us to execute the procedure and verify its functionality, knowing that any modifications can be rolled back if necessary. The rollback capability ensures that test data does not persist, preventing potential inconsistencies or errors in the production environment. </p>
+							<pre><code class="language-sql" data-lang="sql">-- Start an explicit transaction
+BEGIN TRANSACTION;
+CREATE PROCEDURE dbo.UpdateUserNameById
+    @UserId INT,
+    @NewName NVARCHAR(100)
+AS
+BEGIN
+    -- Check if the user exists
+    IF EXISTS (SELECT 1 FROM dbo.Users WHERE UserId = @UserId)
+    BEGIN
+        -- Update the user's name
+        UPDATE dbo.Users
+        SET UserName = @NewName
+        WHERE UserId = @UserId;
+    END
+END;
+
+-- Execute the newly created procedure
+SELECT * FROM dbo.Users
+EXEC dbo.UpdateUserNameById 1, 'New UserName';
+SELECT * FROM dbo.Users
+
+-- Rollback transaction for testing purpose
+ROLLBACK TRANSACTION;</code></pre>
+						</li>
+						<li>
+							<h3>Using Savepoints in a Transaction</h3>
+							<p>Savepoints in SQL Server are used to create points within a transaction to which you can later roll back. This allows you to selectively undo parts of a transaction without rolling back the entire transaction. Here is an example illustrating how a database transaction can rollback to a savepoint if an error occurs:</p>
+
+					<pre><code class="language-sql" data-lang="sql">BEGIN TRY
+    BEGIN TRANSACTION;
+    -- Insert records
+    INSERT INTO your_table (column1, column2) VALUES ('value1', 'value2');
+    -- Set a savepoint
+    SAVE TRANSACTION Savepoint1;
+    -- Insert more records
+    INSERT INTO your_table (column1, column2) VALUES ('value3', 'value4');
+    INSERT INTO your_table (column1, column2) VALUES ('value5', 'value6');
+
+    COMMIT TRANSACTION;
+END TRY
+BEGIN CATCH
+    -- Rollback to savepoint if an error occurs
+    IF @@TRANCOUNT > 0
+    BEGIN
+        ROLLBACK TRANSACTION Savepoint1;
+    END
+END CATCH;</code></pre>
+						</li>
+					</ol>
+
+				</section>
+
+				<section>
+					<h2>Reflection</h2>
+
+					<p>My internship at EDJ Enterprises Inc. was an enlightening experience, particularly in terms of database management practices. Learning about transactions with commit, rollback, and savepoints highlighted the significance of knowing what tools are available. If I had been aware of these techniques earlier, I could have saved time and effort by searching for existing solutions instead of trying to figure them out independently. This realization underscores the importance of continuous learning and staying informed about best practices in software development. I look forward to applying this mindset in future projects, ensuring a more efficient and effective approach to problem-solving.</p>
+				</section>
+
+				<section id="four">
+					<div id="contact"></div>
+				</section>
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+			<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+			<script src="project_page.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-sql.min.js"></script>
+	</body>
+</html>

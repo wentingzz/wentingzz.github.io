@@ -18,7 +18,8 @@
         "company": "EDJ Enterprises Inc.",
         "duration": "May 2019 - Jul 2019",
         "skills": ["C#", "SQL Server", "ASP.NET", "Remote Access Control", "Windows Task Scheduler"],
-        "url": "http://www.edj.com/wp-content/uploads/2017/07/2017-storegazer_rs.pdf"
+        "url": "pages/ms_sql.html",
+        "website": "http://www.edj.com/wp-content/uploads/2017/07/2017-storegazer_rs.pdf"
     },
     "Web Management Intern": {
         "company": "Office of IT at NC State University",
