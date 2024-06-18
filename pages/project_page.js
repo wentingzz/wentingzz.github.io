@@ -17,6 +17,7 @@ function checkHistory() {
         }
     } else {
         // Do something else if there is no previous history
-        alert("No previous history");
+        window.location.href = "../index.html";
+//        alert("No previous history");
     }
 }
