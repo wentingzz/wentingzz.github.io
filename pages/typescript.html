@@ -122,11 +122,11 @@ const reviews: Review[] = [
 				<section>
 					<h2>Tips</h2>
 					<p>File organization is crucial in TypeScript projects for maintainability, scalability, and collaboration. It makes the codebase easier to navigate, allowing developers to locate and manage files efficiently, thus reducing errors during refactoring. Organized files support modular design, making projects scalable and enabling parallel development. This logical structure also facilitates better teamwork, as it helps all team members quickly understand and work with the project, promoting efficient collaboration and smoother onboarding for new developers.</p>
-					<pre>	- enums.ts
+					<pre><code>	- enums.ts
 	- types.ts
 	- utils.ts    // for functions
 	- interfaces.ts
-	- classes.ts</pre>
+	- classes.ts</code></pre>
 					<p>Avoid using the <code>any</code> type in TypeScript, as it effectively disables type checking and defeats the purpose of using TypeScript's strong type system. Relying on <code>any</code> can lead to more runtime errors and reduced code reliability. Instead, use more specific types whenever possible to maintain type safety and clarity in your code. If you need a more flexible type that still provides some type safety, consider using <code>unknown</code> instead of <code>any</code>. This approach ensures that your code benefits from TypeScript's type-checking capabilities while allowing for flexibility where needed.</p>
 				</section>
 
