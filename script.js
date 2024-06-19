@@ -95,12 +95,17 @@ sideNav.addEventListener("mouseleave", function() {
     this.style.width = "0";
 });
 
-const {Translate} = require('@google-cloud/translate').v2;
-const translate = new Translate();
 
-async function translateText() {
-    const [translation] = await translate.translate('Hello, world!', 'es');
-    console.log(`Translated text: ${translation}`);
-}
-
-translateText();
+function googleTranslateElementInit() {
+				new google.translate.TranslateElement(
+					{pageLanguage: 'en'},
+					'google_translate_element'
+				);
+			}
+document.addEventListener('DOMContentLoaded', function() {
+    const selectedLanguage = localStorage.getItem('selectedLanguage');
+    if (selectedLanguage) {
+        document.getElementById('language-selector').value = selectedLanguage;
+        translateHtml();
+    }
+});

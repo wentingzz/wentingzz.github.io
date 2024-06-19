@@ -29,6 +29,10 @@
 		</header>
 		<span class="openbtn" onclick="navChange()">&#9776;</span>
 		<div id="mySidenav" class="sidenav"></div>
+		<div class="dropdown">
+			<button class="dropbtn"><i class="fas fa-globe"></i></button>
+			<div id="google_translate_element"></div>
+		</div>
 
 		<div id="main">
 			<section id="me" data-abbr="About Me">
@@ -36,7 +40,7 @@
 					<h2>About Me</h2>
 				</header>
 				<p>
-					Welcome to my portfolio! I'm Wenting, a software developer with expertise in full-stack web development and a passion for AI. With a master's degree in Computer Science and three years of experience, I excel in MS SQL Server, Django, React, Git and cutting-edge technologies.
+					Welcome to my personal website! I'm Wenting, a software developer with expertise in full-stack web development and a passion for AI. With a master's degree in Computer Science and three years of experience, I excel in MS SQL Server, Django, React, Git and cutting-edge technologies.
 					<br/>
 					My journey in software development has been enriched by diverse projects. I led the frontend development for MMTrip, a multi-modal trip planner app, using React and Google APIs. I also played a key role in the backend development of iTrust2, an Electronic Health Record system, implementing role-based access control and prescription management.
 					<br/>
@@ -165,6 +169,8 @@
 				$("#contact").load("../contact.html");
 				$("#footer").load("../footer.html");
 			});
+		</script>
+		<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 		</script>
         <script src="script.js"></script>
 

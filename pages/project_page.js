@@ -21,3 +21,18 @@ function checkHistory() {
 //        alert("No previous history");
     }
 }
+
+function googleTranslateElementInit() {
+	new google.translate.TranslateElement(
+		{pageLanguage: 'en'},
+		'google_translate_element'
+	);
+}
+document.addEventListener('DOMContentLoaded', function() {
+    const selectedLanguage = localStorage.getItem('selectedLanguage');
+    if (selectedLanguage) {
+        console.log(document.getElementById('google_translate_element'))
+        document.getElementById('google_translate_element').value = selectedLanguage;
+        translateHtml();
+    }
+});
