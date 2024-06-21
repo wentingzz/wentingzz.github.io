@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Backward Compatibility</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
+
+
+	</head>
+	<body class="is-preload">
+		<div class="back-link">
+			<a href="javascript:void(0);" onclick="checkHistory()" style="border-bottom: none; ">
+				<span class="icon solid fa-arrow-left" style="font-size: 24px"></span>
+			</a>
+		</div>
+		<!-- Main -->
+			<div id="project">
+				<section id="intro">
+					<header class="major">
+						<h2><a href="#more" class="icon regular fa-bookmark" > JavaScript Notes</a></h2>
+					</header>
+					<p></p>
+					<p>TypeScript is widely adopted in the development community due to its static typing, which significantly enhances error detection and debugging during the development phase. Unlike JavaScript, where many errors only surface at runtime, TypeScript catches type-related mistakes early, reducing the likelihood of runtime errors. This feature not only increases code reliability but also boosts developer productivity by providing immediate feedback through integrated development environments (IDEs). Enhanced IDE support with features like autocompletion, intelligent code navigation, and robust refactoring tools further streamline the development process, making TypeScript an invaluable tool for creating maintainable and bug-free code.</p>
+					<p>Moreover, TypeScript's compatibility with modern JavaScript features and its support for future JavaScript proposals allow developers to write more expressive and cleaner code. By transpiling to JavaScript, TypeScript ensures that applications can run in any environment that supports JavaScript, without sacrificing the advantages of modern syntax and features. This future-proofing aspect, combined with TypeScript's ability to integrate seamlessly with popular frameworks and libraries like React, Angular, and Node.js, makes it particularly beneficial for large-scale projects. The strong typing system and modular code structure promote better collaboration within development teams, enabling scalable and consistent codebases that are easier to understand, extend, and maintain over time.</p>
+				</section>
+				<section>
+					<h2>Basics</h2>
+					<p><code>var</code> exists in function-level scope, and <code>let</code> exists in block-level scope. </p>
+					<p><code>undefined</code> means variable is declared but not assigned a value, and <code>null</code> means empty value. </p>
+					<p><code>[1,2,3]</code> represents array, and <code>{name: 'Alice', }</code> means object. </p>
+					<pre><code class="language-javascript" data-lang="text/javascript">function log() {
+if(true){
+	var x = 10;
+	let y = 10;
+	console.log(y);
+}
+console.log(x);
+}</code></pre>
+					<p>Ternary operator is a shorthand way to write an <code>if-else</code> statement</p>
+					<pre><code class="language-javascript" data-lang="text/javascript">//For loop
+let age = 18;
+let canVote = (age >= 18) ? "Yes, you can vote." : "No, you cannot vote yet.";</code></pre>
+					<p>Loops</p>
+					<pre><code class="language-javascript" data-lang="text/javascript">//For loop
+for (let i = 0; i < 5; i++) {
+    console.log("Iteration number: " + i);
+}
+
+//While loop
+let i = 0;
+while (i < 5) {
+    i++;
+}
+
+//Do while loop
+let i = 0;
+do {
+    i++;
+} while (i < 5);
+
+//for...in Loop: Iterates over the properties of an object.
+let person = { name: "John", age: 30, city: "New York" };
+for (let key in person) {
+    console.log(key + ": " + person[key]);
+}
+
+//for...of Loop: Iterates over the values of an iterable object.
+let array = ["apple", "banana", "cherry"];
+for (let fruit of array) {
+    console.log(fruit);
+}</code></pre>
+				</section>
+
+				<section>
+					<h2>Functions</h2>
+					<pre><code class="language-javascript" data-lang="text/javascript">//Function declaration - hoisted (you can call it before it’s defined in your code)
+function greet() {
+    console.log("Hello, world!");
+}
+
+//Function Expression - must call after it's defined
+const greet = function() {
+    console.log("Hello, world!");
+};
+
+//Arrow Function provides a shorter syntax and do not have their own this value.
+const greet = () => {
+    console.log("Hello, world!");
+};
+}</code></pre>
+					<p>
+						Function closure
+					</p>
+					<pre><code class="language-javascript" data-lang="text/javascript">function createCounter() {
+    let count = 0; // `count` is a private variable
+    return function() {
+        count++;
+        return count;
+    };
+}
+
+const counter = createCounter();
+console.log(counter()); // Output: 1
+console.log(counter()); // Output: 2
+console.log(counter()); // Output: 3</code></pre>
+				</section>
+
+				<section>
+					<h2>Component</h2>
+					<p>Array</p>
+					<pre><code class="language-javascript" data-lang="text/javascript">// Creating an array
+const fruits = ["Apple", "Banana", "Cherry"];
+fruits.push("Banana"); // Adds to the end (one or more). ["Apple", "Banana", "Cherry", "Banana"]
+fruits.unshift("Orange"); // Adds to the beginning (one or more). ["Orange", "Apple", "Banana", "Cherry", "Banana"]
+
+const bananaIndex = fruits.indexOf("Banana"); //2
+const lastBananaIndex = fruits.lastIndexOf("Banana"); //4
+
+const lastFruit = fruits.pop(); // Removes from the end. ["Orange", "Apple", "Banana", "Cherry"]
+const firstFruit = fruits.shift(); // Removes from the beginning. ["Apple", "Banana", "Cherry"]
+
+console.log("Iterating with for loop:");
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
+fruits.forEach(fruit => console.log(fruit));
+
+//Make copy without modifying the original array
+const upperCaseFruits = fruits.map(fruit => fruit.toUpperCase()); // ["APPLE", "BANANA", "CHERRY"]
+const filteredFruits = fruits.filter(fruit => fruit.startsWith("B")); // ["Banana"]
+
+const fruitLengths = fruits.reduce((acc, fruit) => acc + fruit.length, 0); // 5+6+6=18
+const foundFruit = fruits.find(fruit => fruit === "Banana"); // "Banana"
+const hasCherry = fruits.includes("Cherry"); //true
+fruits.sort(); // ["Apple", "Banana", "Cherry"]
+
+// Combining arrays
+const moreFruits = ["Strawberry", "Pineapple"];
+const allFruits = fruits.concat(moreFruits); // ["Apple", "Banana", "Cherry", "Strawberry", "Pineapple"]
+const slicedFruits = allFruits.slice(1, 4); // ["Banana", "Cherry", "Strawberry"]
+allFruits.splice(2, 1, "Kiwi"); // Removes the third element and adds "Kiwi". ["Apple", "Banana", "Kiwi", "Strawberry", "Pineapple"]
+allFruits.length = 0; //Clearing an array. []</code></pre>
+					<p>String</p>
+					<pre><code class="language-javascript" data-lang="text/javascript">let greeting = "   Hello, World!   ";
+
+let trimmedGreeting = greeting.trim(); // "Hello, World!"
+let subString = trimmedGreeting.substring(7, 12); // "World"
+console.log(trimmedGreeting.toUpperCase()); // Output: "HELLO, WORLD!"
+console.log(trimmedGreeting.includes("World")); // Output: true
+console.log(`This is, ${trimmedGreeting}!`); // Output: "This is, HELLO, WORLD!"
+let words = trimmedGreeting.split(", "); // ["Hello", "World!"]
+let reversed = trimmedGreeting.split("").reverse().join(""); //"!dlroW ,olleH"</code></pre>
+					<p>
+						Class
+					</p>
+					<pre><code class="language-javascript" data-lang="text/javascript">class Car {
+    constructor(brand, model, year) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+        this.speed = 0;
+    }
+    accelerate(increment) {
+        this.speed += increment;
+    }
+    brake(decrement) {
+        this.speed -= decrement;
+    }
+    getStatus() {
+        return `${this.year} ${this.brand} ${this.model} is moving at ${this.speed} km/h.`;
+    }
+}
+
+// Creating an instance of the Car class
+const myCar = new Car("Toyota", "Camry", 2020);
+myCar.accelerate(50);
+console.log(myCar.getStatus()); // Output: 2020 Toyota Camry is moving at 50 km/h.
+myCar.brake(20);
+console.log(myCar.getStatus()); // Output: 2020 Toyota Camry is moving at 30 km/h.</code></pre>
+				</section>
+
+				<section>
+					<h2>DOM</h2>
+					<p>The document object model (DOM), is a programming interface for web documents. It provides a structured representation of the web page, making it easier for developers to interact with and manipulate web content. </p>
+					<pre><code class="language-javascript" data-lang="text/javascript">//Function declaration - hoisted (you can call it before it’s defined in your code)
+function greet() {
+    console.log("Hello, world!");
+}
+
+//Function Expression - must call after it's defined
+const greet = function() {
+    console.log("Hello, world!");
+};
+
+//Arrow Function provides a shorter syntax and do not have their own this value.
+const greet = () => {
+    console.log("Hello, world!");
+};
+}</code></pre>
+					<p>
+						Function closure
+					</p>
+					<pre><code class="language-javascript" data-lang="text/javascript">function createCounter() {
+    let count = 0; // `count` is a private variable
+    return function() {
+        count++;
+        return count;
+    };
+}
+
+const counter = createCounter();
+console.log(counter()); // Output: 1
+console.log(counter()); // Output: 2
+console.log(counter()); // Output: 3</code></pre>
+				</section>
+
+
+				<section>
+					<h2>Tips</h2>
+					<p>File organization is crucial in TypeScript projects for maintainability, scalability, and collaboration. It makes the codebase easier to navigate, allowing developers to locate and manage files efficiently, thus reducing errors during refactoring. Organized files support modular design, making projects scalable and enabling parallel development. This logical structure also facilitates better teamwork, as it helps all team members quickly understand and work with the project, promoting efficient collaboration and smoother onboarding for new developers.</p>
+					<pre><code>	- enums.ts
+	- types.ts
+	- utils.ts    // for functions
+	- interfaces.ts
+	- classes.ts</code></pre>
+					<p>Avoid using the <code>any</code> type in TypeScript, as it effectively disables type checking and defeats the purpose of using TypeScript's strong type system. Relying on <code>any</code> can lead to more runtime errors and reduced code reliability. Instead, use more specific types whenever possible to maintain type safety and clarity in your code. If you need a more flexible type that still provides some type safety, consider using <code>unknown</code> instead of <code>any</code>. This approach ensures that your code benefits from TypeScript's type-checking capabilities while allowing for flexibility where needed.</p>
+				</section>
+
+				<section id="four">
+					<div id="contact"></div>
+				</section>
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+			<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+			<script src="project_page.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-sql.min.js"></script>
+			<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	</body>
+</html>
