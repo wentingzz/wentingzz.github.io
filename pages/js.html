@@ -187,40 +187,59 @@ console.log(myCar.getStatus()); // Output: 2020 Toyota Camry is moving at 30 km/
 				</section>
 
 				<section>
-					<h2>DOM</h2>
+					<h2>DOM & BOM</h2>
 					<p>The document object model (DOM), is a programming interface for web documents. It provides a structured representation of the web page, making it easier for developers to interact with and manipulate web content. </p>
-					<pre><code class="language-javascript" data-lang="text/javascript">//Function declaration - hoisted (you can call it before it’s defined in your code)
-function greet() {
-    console.log("Hello, world!");
+					<pre><code class="language-javascript" data-lang="text/javascript"> //&lt;h1 id=&quot;main-title&quot;&gt;Welcome to the DOM Manipulation Example&lt;/h1&gt;
+// &lt;p class=&quot;description&quot;&gt;This is a paragraph of text that we will manipulate using JavaScript.&lt;/p&gt;
+// &lt;p class=&quot;description&quot; id=&quot;another&quot;&gt;This is another paragraph with the same class.&lt;/p&gt;
+const mainTitle = document.getElementById('main-title');
+const descriptions = document.getElementsByClassName('description');
+const paragraphs = document.getElementsByTagName('p');
+const firstDescription = document.querySelector('.description'); //CSS-like selector
+const firstDescription = document.querySelector('#another');
+
+// Accessing child elements
+const mainTitle = container.firstElementChild;
+console.log(mainTitle.textContent); // DOM Traversal Example
+const content = mainTitle.nextElementSibling;
+
+//Element CSS Style
+function toggleClassAndColor() {
+	div.classList.toggle("active");
+	div.classList.toggle("inactive");
+	// Check if the "active" class is present and change the background color accordingly
+	if (div.classList.contains("active")) {
+		div.style.backgroundColor = "blue";
+	} else {
+		div.style.backgroundColor = "red";
+	}
 }
-
-//Function Expression - must call after it's defined
-const greet = function() {
-    console.log("Hello, world!");
-};
-
-//Arrow Function provides a shorter syntax and do not have their own this value.
-const greet = () => {
-    console.log("Hello, world!");
-};
-}</code></pre>
+button.addEventListener("click", toggleClassAndColor);
+btn.addEventListener('click',()=>{
+	text.style.cssText = "color: red; font-weight: bold;";
+	heading.style.setProperty("color", "violet", "important");
+	paragraph.style.removeProperty("color");
+})</code></pre>
 					<p>
-						Function closure
+						BOM (Browser Object Model) manipulations in JavaScript. The BOM allows you to interact with the browser itself, including the window object, navigator, location, history, and screen objects:
 					</p>
-					<pre><code class="language-javascript" data-lang="text/javascript">function createCounter() {
-    let count = 0; // `count` is a private variable
-    return function() {
-        count++;
-        return count;
-    };
-}
-
-const counter = createCounter();
-console.log(counter()); // Output: 1
-console.log(counter()); // Output: 2
-console.log(counter()); // Output: 3</code></pre>
+					<pre><code class="language-javascript" data-lang="text/javascript">// Navigate to another page
+document.getElementById('navigate-btn').addEventListener('click', () => {
+	window.location.href = 'https://www.google.com';
+});
+// Reload the current page
+document.getElementById('reload-btn').addEventListener('click', () => {
+	window.location.reload();
+});
+// Go back in history
+document.getElementById('back-btn').addEventListener('click', () => {
+	window.history.back();
+});
+// Go forward in history
+document.getElementById('forward-btn').addEventListener('click', () => {
+	window.history.forward();
+});</code></pre>
 				</section>
-
 
 				<section>
 					<h2>Tips</h2>
