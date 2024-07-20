@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('pages/projects.json')
+    fetch('pages/projects_overview.json')
         .then(response => response.json())
         .then(data => {
             const articles = document.querySelectorAll('.work-item');
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Error fetching project data:', error));
 
-    fetch('pages/experience.json')
+    fetch('pages/experiences.json')
         .then(response => response.json())
         .then(data => {
             const experiences = document.querySelectorAll('.experience-item');
