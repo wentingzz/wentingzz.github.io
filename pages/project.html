@@ -28,7 +28,7 @@
 				.then(response => response.json())
 				.then(data => {
 					const urlParams = new URLSearchParams(window.location.search);
-					const projectId = urlParams.get('project');
+					const projectId = urlParams.get('title');
 					if (projectId) {
 						const project = data[projectId];
 						if (project) {
@@ -71,33 +71,37 @@
 										`).join('')}
 									</div>
 								</section>
-								<section id="more">
-									<h2>More Details</h2>
-									<div class="features">
-										<article>
-											<i class="icon solid fa-code"></i>
-											<div class="content">
-												<h3>Technology Stack</h3>
-												<p style="white-space: pre-line;">${project.technology_stack}</p>
-											</div>
-										</article>
-										<article>
-											<i class="${project.more_tech.icon}"></i>
-											<div class="content">
-												<h3>${project.more_tech.title}</h3>
-												<p>
-													${project.more_tech.description.map(item => `
-														${item.link ?
-															`<a href="${item.link}">${item.text}</a>` :
-															`<span style="white-space: pre-line;">${item.text}</span>`
-														}
-													`).join('<br/>')}
-												</p>
+								${project.more_tech && project.technology_stack ?
+									`<section id="more">
+										<h2>More Details</h2>
+										<div class="features">
+											<article>
+												<i class="icon solid fa-code"></i>
+												<div class="content">
+													<h3>Technology Stack</h3>
+													<p style="white-space: pre-line;">${project.technology_stack}</p>
+												</div>
+											</article>
+											<article>
+												<i class="${project.more_tech.icon}"></i>
+												<div class="content">
+													<h3>${project.more_tech.title}</h3>
+													<p>
+														${project.more_tech.description.map(item => `
+															${item.link ?
+																`<a href="${item.link}">${item.text}</a>` :
+																`<span style="white-space: pre-line;">${item.text}</span>`
+															}
+														`).join('<br/>')}
+													</p>
 
-											</div>
-										</article>
-									</div>
-								</section>
+												</div>
+											</article>
+										</div>
+									</section>`
+									:''
+								}
+
 								${project.flow ?
 									`<section>
 										<h2>Flow</h2>

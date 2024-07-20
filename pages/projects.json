@@ -96,5 +96,11 @@
         "image": "images/fulls/genshin_cover.jfif",
         "skills": ["Excel", "Javascript"],
         "description": "Game resource weekly planner"
+    },
+    "Code Flow Visualizer": {
+        "url": "pages/project.html?title=code_flow",
+        "image": "images/fulls/code_flow.png",
+        "skills": ["Python", "Graphviz", "compiler"],
+        "description": "Code-to-Graphviz converter for visualizing control flow"
     }
 }
