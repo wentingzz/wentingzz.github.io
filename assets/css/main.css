@@ -132,7 +132,7 @@ input, select, textarea {
 
 	p {
 		margin: 0 0 1em 0;
-		font-size: 1.1em;
+		font-size: 1.2em;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -148,43 +148,43 @@ input, select, textarea {
 		}
 
 	h1 {
-		font-size: 2em;
+		font-size: 2.5em;
 		line-height: 1.5em;
 	}
 
 	h2 {
-		font-size: 1.5em;
+		font-size: 2em;
 		line-height: 1.5em;
 	}
 
 	h3 {
-		font-size: 1.25em;
+		font-size: 1.75em;
 		line-height: 1.5em;
 	}
 
 	h4 {
-		font-size: 1.1em;
+		font-size: 1.5em;
 		line-height: 1.5em;
 	}
 
 	h5 {
-		font-size: 0.9em;
+		font-size: 1.1em;
 		line-height: 1.5em;
 	}
 
 	h6 {
-		font-size: 0.7em;
+		font-size: 0.9em;
 		line-height: 1.5em;
 	}
 
 	sub {
-		font-size: 0.8em;
+		font-size: 1em;
 		position: relative;
 		top: 0.5em;
 	}
 
 	sup {
-		font-size: 0.8em;
+		font-size: 1em;
 		position: relative;
 		top: -0.5em;
 	}
