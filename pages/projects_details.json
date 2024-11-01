@@ -1,4 +1,51 @@
 {
+    "crm": {
+        "name": "CRM Search",
+        "icon": "icon solid fa-code",
+        "icon_link": "https://sites.google.com/uci.edu/swell-crm/home", 
+        "other_links": ["https://docs.google.com/document/d/1GPAV5oPQcpEn4Sax5xpl9dK7E_KtgqXk8PTMZ8f4-aQ/edit?tab=t.0#heading=h.d1b3az9233c9", ""],
+        "description": "This project is a lightweight, web-based tool for searching and retrieving client information within a CRM system. Built using Google Sites for the front end, Google Apps Script for front- and back-end functionality, and Google Sheets as the database, the solution enables efficient client lookup by leveraging layered caching and flexible querying. Designed to streamline client data access, this tool demonstrates a scalable approach for integrating search features into Google Workspace.",
+        "demo": "#demo",
+        "demo_text": "Demo",
+        "features": [
+            {
+                "icon": "icon solid fa-magnifying-glass",
+                "title": "Dynamic Search",
+                "description": "Allows users to quickly search for clients by name, phone number, email, or all combined for streamlined data access."
+            },
+            {
+                "icon": "icon solid fa-database",
+                "title": "Flexible Querying",
+                "description": "Supports querying by both column name and index, enabling easier data access and maintainable code."
+            },
+            {
+                "icon": "icon solid fa-layer-group", 
+                "title": "Layered Caching",
+                "description": "Implements a layered caching system to reduce load times and enhance data retrieval speed."
+            },
+            {
+                "icon": "icon solid fa-chart-line",
+                "title": "Scalable Structure",
+                "description": "Designed for scalability, with potential for expanding into a full CRM with additional features like tracking and reporting."
+            }
+        ],
+        "technology_stack": [
+            "JavaScript, HTML, CSS, Excel"
+        ],
+        "more_tech": {
+            "icon": "icon solid fa-certificate",
+            "title": "Milestone",
+            "description": [
+                {
+                    "text":"Google Sites with Apps Script and Google Sheets"
+                }
+            ]
+
+        },
+        "demo_mp4": "../images/others/crm.mp4",
+        "demo_details": "\n\nThe demo showcases how users can perform exact searches and query data using either column names or column indices. You can explore the <a href=\"https://sites.google.com/uci.edu/swell-crm/home\">Demo</a> yourself, and here are links to the <a href=\"https://docs.google.com/spreadsheets/d/16FIdmfD6KWtKyJX13UyWsBB4GeTx2RC9YPINrGHsHE0/edit?gid=0#gid=0\">database</a> and the underlying <a href=\"https://script.google.com/home/projects/1Bk7BK8sw8KwfTrD6vkRIAEv6nkZi1JH_RMkdCBnmYyWCcT4yy9FbJTF_/edit\">AppScript</a> code. "
+
+    },
     "get_my_paper": {
         "name": "Get My Paper",
         "icon": "icon brands fa-github",

@@ -97,6 +97,12 @@
         "skills": ["Excel", "Javascript"],
         "description": "Game resource weekly planner"
     },
+    "CRM": {
+        "url": "pages/project.html?title=crm",
+        "image": "images/fulls/crm.png",
+        "skills": ["Google Sites", "Apps Script", "Google Sheets", "Javascript", "HTML", "CSS"],
+        "description": "Simple CRM Client Search System"
+    },
     "Code Flow Visualizer": {
         "url": "pages/project.html?title=code_flow",
         "image": "images/fulls/code_flow.png",
