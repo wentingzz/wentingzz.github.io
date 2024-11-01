@@ -3,7 +3,6 @@
         "name": "CRM Search",
         "icon": "icon solid fa-code",
         "icon_link": "https://sites.google.com/uci.edu/swell-crm/home", 
-        "other_links": ["https://docs.google.com/document/d/1GPAV5oPQcpEn4Sax5xpl9dK7E_KtgqXk8PTMZ8f4-aQ/edit?tab=t.0#heading=h.d1b3az9233c9", ""],
         "description": "This project is a lightweight, web-based tool for searching and retrieving client information within a CRM system. Built using Google Sites for the front end, Google Apps Script for front- and back-end functionality, and Google Sheets as the database, the solution enables efficient client lookup by leveraging layered caching and flexible querying. Designed to streamline client data access, this tool demonstrates a scalable approach for integrating search features into Google Workspace.",
         "demo": "#demo",
         "demo_text": "Demo",
